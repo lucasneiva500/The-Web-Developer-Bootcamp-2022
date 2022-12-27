@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Score Keeper</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+    <style>
+        .winner {
+            color: rgb(0, 255, 0)
+        }
+
+        .loser {
+            color: rgb(255, 0, 0)
+        }
+    </style>
+
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-half is-offset-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-2by1"><img
+                                    src="https://images.unsplash.com/photo-1519009843775-0105e5e6d92c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                                    alt=""></figure>
+                        </div>
+                        <header class="card-header">
+                            <p class="card-header-title">
+                                Score Keeper
+                            </p>
+                        </header>
+                        <div class="card-content">
+                            <h1 class="title is-1"><span id="p1Display">0</span> to <span id="p2Display">0</span></h1>
+                            <p class="subtitle">Use the buttons below to keep score</p>
+                            <label for="playTo" class="label is-large is-inline">Playing To</label>
+                            <div class="select is-rounded">
+                                <select name="" id="playTo">
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <button id="p1Button" class="is-primary button card-footer item">+1 Player One</button>
+                            <button id="p2Button" class="is-info button card-footer item">+1 Player Two</button>
+                            <button id="reset" class="is-danger button card-footer item">Reset</button>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!--
+        Código sem utilizar bulma, somente as fontes
+        <h1><span id="p1Display">0</span> to <span id="p2Display">0</span></h1>
+            <select name="" id="playTo">
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <button id="p1Button">+1 Player One</button>
+        <button id="p2Button">+1 Player Two</button>
+        <button id="reset">Reset</button>
+    -->
+
+    <script src="scoreKeeper.js"></script>
+</body>
+
+</html>
