@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>HTML</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="028_HTML.html">Home</a></li>
+            <li><a href="028_HTML.html">Sobre</a></li>
+            <li><a href="028_HTML.html">Contato</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>HTML</h1>
+        <!--Título principal H1, recomendado 1 por página-->
+        <hr>
+        <!--Adicionar comentários no programa em HTML que não serão lidos pelo navegador-->
+        <img src="img 1.jpg" alt="Dying Light loading screen">
+
+        <div>
+            <a href="https://www.google.com">Hyperlink <span>Google Chrome</span></a>
+            <br><a href="028_HTML.html">Hyperlink 28</a>
+        </div>
+        <section>
+            <h2>Subtítulo 1 (H2)</h2>
+            <h3>Sub-subtítulo 1 (H3)</h3>
+            <h4>Sub-sub-subtítulo 1 (H4)</h4>
+            <h5>Sub-sub-sub-subtítulo 1 (H5)</h5>
+            <h6>Sub-sub-sub-sub-subtítulo 1 (H6)</h6>
+
+            <p>
+                <b>(Ctrl + Shift + P)</b> = Paleta de Comandos
+            </p>
+            <p>
+                <b>(Shift + Alt + F)</b> = Formatação Automática de Texto
+            </p>
+            <p>
+                Parágrafo 1 Texto Simples <b>Texto em Negrito</b> <i>Texto em Itálico</i>
+            </p>
+            <h2>Subtítulo 2 (H2)</h2>
+            <h3>Sub-subtítulo 2 (H3)</h3>
+            <h4>Sub-sub-subtítulo 2 (H4)</h4>
+            <h5>Sub-sub-sub-subtítulo 2 (H5)</h5>
+            <h6>Sub-sub-sub-sub-subtítulo 2 (H6)</h6>
+            <p>
+                Parágrafo 2 Texto Simples <b>Texto em Negrito</b> <i>Texto em Itálico</i>
+            </p>
+        </section>
+        <!--Listas podem ser misturadas, não ordenadas com ordenadas etc-->
+        <h2>Lista Ordenada</h2>
+        <ol>
+            <li>Listed item 1</li>
+            <ol>
+                <li>Listed item 1.1</li>
+                <li>Listed item 1.2</li>
+            </ol>
+            <li>Listed item 2</li>
+            <li>Listed item 3</li>
+        </ol>
+        <h2>Lista Não Ordenada</h2>
+        <ul>
+            <li>Listed item 1</li>
+            <ul>
+                <li>Listed item 1.1</li>
+                <li>Listed item 1.2</li>
+            </ul>
+            <li>Listed item 2</li>
+            <li>Listed item 3</li>
+        </ul>
+        <h2>Resumo de alguns comandos</h2>
+        <p>
+            superscrito<sup>[superscrito]</sup>
+            <br>superscrito<sub>[sub-escrito]</sub>
+            <br>superscrito com hyperlink<sup><a href="028_HTML.html">[superscrito]</a></sup>
+            <br>H<sub>2</sub>O
+            <br><sup>1</sup>/<sub>2</sub> + <sup>1</sup>/<sub>2</sub> = 1
+            <br>
+            <br>& para caracteres especiais
+            <br>&hearts; &spades;
+            <br>0&lt;X&lt;10
+            <br>10&gt;X&gt;0
+            <br>hr = divisor horizontal, linha embaixo do título h1 no topo da página
+            <br>lorem = cria parágrafos para testar o conteúdo (texto)
+        </p>
+        <h2>divs, marcadores semânticos</h2>
+        <p>
+            DIVs = section article nav main header footer aside summary details === lógica para não usar sempre
+            <br>div = agrupador de conteúdo
+            <br>main = div para o conteúdo principal
+            <br>header = div para o cabeçalho, inclui o conteúdo inicial
+            <br>section = div com nome diferente
+            <br>nav = divs com snaps, usando links para navegação
+            <br>footer = div para o rodapé
+            <br>section = seção autônoma, também é genérico como o div
+            <br>article = composição independente em um documento, sub-artigos na página, jornais
+            <br>aside = documento que nao faz parte do conteúdo, barras laerais por exemplo
+            <br>figure = legendas para imagens por exemplo
+        </p>
+        <h2>Emmet</h2>
+        <p>
+            Auxiliar para digitar sintaxes de programação rapidamente
+            <br>main&gt;section&gt;h1 = cria os elementos, um vinculado dentro do outro
+            <br>h1+h2+h3 = cria os elementos um abaixo do outro
+            <br>nav&gt;ul&gt;li*5&gt;a[href=$]{Texto} = cria uma lista não ordenada de naveçaão com 5 itens enumerados
+            <br>&gt; = elementos vinculados
+            <br>* = múltiplos elementos
+            <br>+ = elementos adjacentes
+        </p>
+        <h2>Tabelas</h2>
+        <p>
+            Maneira clara e agradável de exibir alguns dados, dispondo de linhas e colunas
+            <br>Elementos de tabela = table td tr th thead tbody tfoot colgroup caption
+            <br>table = agrupa os elementos utilizados na tabela
+            <br>td = célula de dados da tabela, apenas uma célula, coluna
+            <br>tr = table row, linha de células na tabela, linha
+            <br>th = cabeçalho da tabela
+            <br>thead = marcador semântico para o cabeçalho de cima
+            <br>tbody = marcador semântico para o conteúdo da tabela
+            <br>tfoot = marcador semântico para o cabeçalho de baixo
+            <br>rowspan = número de linhas ocupadas por um item na tabela
+            <br>colspan = número de colunas ocupadas por um item na tabela
+        </p>
+        <h2>Tabela 1</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>título 1 tr0</th>
+                    <th>título 2 tr0</th>
+                    <th>título 3 tr0</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>célula tr1 td1</td>
+                    <td>célula tr1 td2</td>
+                    <td>célula tr1 td3</td>
+                </tr>
+                <tr>
+                    <td>célula tr2 td4</td>
+                    <td>célula tr2 td5</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Tabela 2</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2">título 1 tr0</th>
+                    <th colspan="2">título 2 tr0</th>
+                    <th rowspan="2">título 3 tr0</th>
+                </tr>
+                <tr>
+                    <th>título 1 tr01</th>
+                    <th>título 2 tr01</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>célula tr1 td1</td>
+                    <td>célula tr1 td2</td>
+                    <td>célula tr1 td3</td>
+                    <td>célula tr1 td4</td>
+                </tr>
+                <tr>
+                    <td>célula tr2 td1</td>
+                    <td>célula tr2 td2</td>
+                    <td>célula tr2 td3</td>
+                    <td>célula tr2 td4</td>
+                </tr>
+                <tr>
+                    <td>célula tr2 td1</td>
+                    <td>célula tr2 td2</td>
+                    <td>célula tr2 td3</td>
+                    <td>célula tr2 td3</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Formulários</h2>
+        <p>
+            form = separador que determina o formulário
+            <br>action = para onde o dado é enviado
+            <br>method = atributo que especifica como o dado será tratado
+            <br>input = sem tag de fechamento, elementos de entrada, caixas de seleção, textos etcs
+            <br>type = tipo de dado para entrada
+            <br>placeholder = espaço reservado para indicar o que é a entrada
+            <br>label = associado a entrada, para indicar o dado
+            <br>id = dado, não repetir as variáveis
+            <br>for = vincula a label ao id
+            <br>button = solicitação, fora do formulário inicialemnte não faz nada, dentro do formulário realiza a ação
+            se não especificado
+            <br>name = tipo de dado enviado, rotula o dado
+            <br>textarea = campo para texto
+            <br>min max minlength maxlength = tamanho máximo para número e textos
+            <br>required = campo obrigatório
+            <br>checkbox = caixa de seleção
+            <br>radio = caixa de escolha, no caso de somente ser possível uma opção dentre várias
+            <br>select + option = caixa de seleção com texto flutuante
+            <br>pattern = expressão regular, com um padrão como em senhas que exigem números por exemplo
+            <br>usar divisões para o formulário não ficar confuso, div, p, etc
+
+        </p>
+        <form action="028_HTML.html">
+            <p>
+                <label for="nome">Insira um nome:</label>
+                <input id="nome" type="text" placeholder="nome" name="nome">
+            </p>
+            <!--outra maneira de inserir label com inputs, não muito útil-->
+            <p>
+                <label>
+                    Insira um sobrenome:
+                    <input type="text" placeholder="sobrenome" name="sobrenome">
+                </label>
+            </p>
+            <p>
+                <label for="senha">Insira uma senha:</label>
+                <input id="senha" type="password" placeholder="senha" name="senha">
+            </p>
+            <p>
+                <label for="número">Insira um número:</label>
+                <input id="número" type="number" min="0" max="100" placeholder="insira um número" name="numero">
+            </p>
+            <p>
+                <label for="tempo">Insira um horário:</label>
+                <input id="tempo" type="time" name="tempo">
+            </p>
+            <p>
+                <label for="cor">Insira uma cor:</label>
+                <input id="cor" type="color" name="cor">
+            </p>
+            <button type="button">
+                Enviar botão
+            </button>
+            <input type="submit" value="Enviar input submit">
+        </form>
+        <h4>Pesquisa no Google</h4>
+        <form action="https://www.google.com/search">
+            <p>
+                <label for="pesquisa">Google:</label>
+                <input id="pesquisa" type="text" name="q" placeholder="O que deseja pesquisar?">
+                <button>Pesquisar no Google</button>
+            </p>
+        </form>
+        <h4>Pesquisa no YouTube</h4>
+        <form action="https://www.youtube.com/results">
+            <p>
+                <label for="video">YouTube:</label>
+                <input id="video" type="text" name="search_query" placeholder="O que deseja pesquisar?">
+                <input type="submit" value="Pesquisar no YouTube">
+            </p>
+        </form>
+        <h4>Mais inputs</h4>
+        <form action="">
+            <input type="checkbox" name="concordar_tos" id="concordar" unchecked>
+            <label for="concordar">Eu concordo com os termos de serviço</label>
+            <p>
+                <label for="p">P:</label>
+                <input type="radio" name="selecao" id="p" value="pequeno">
+                <label for="m">M:</label>
+                <input type="radio" name="selecao" id="m" value="medio">
+                <label for="g">G:</label>
+                <input type="radio" name="selecao" id="g" value="grande">
+            </p>
+            <p>
+                <label for="material">Escolha o material:</label>
+                <select name="material" id="material">
+                    <option value="aleatorio" selected>--Escolha o material--</option>
+                    <option value="madeira">Madeira</option>
+                    <option value="diamante">Diamante</option>
+                    <option value="ferro">Ferro</option>
+                    <option value="esmeralda">Esmeralda</option>
+                    <option value="ouro">Ouro</option>
+                </select>
+            </p>
+            <p>
+                <label for="distancia">Distância:</label>
+                <input type="range" name="distancia" id="distancia" min="0" max="10" value="5" step="1"
+                    name="distancia">
+
+            </p>
+            <p>
+                <label for="texto">Resumo:</label>
+                <br>
+                <textarea name="texto" id="texto" cols="50" rows="10" placeholder="Escreva um resumo">
+                </textarea>
+            </p>
+            <button>Enviar mais inputs botão</button>
+            <input type="submit" value="Enviar mais inputs submit">
+        </form>
+
+        <h3>Validações</h3>
+        <!--<form action="/validacao">, o 28.html em todos os forms é só pra não carregar páginas que não existem-->
+        <form action="028_HTML.html">
+            <p>
+                <label for="primeironome">Insira seu primeiro nome:</label>
+                <input type="text" name="primeironome" id="primeironome" required>
+            </p>
+            <p>
+                <label for="senhavalidacao">Insira uma senha:</label>
+                <input type="password" name="senhavalidacao" id="senhavalidacao" minlength="4" maxlength="12" required>
+            </p>
+            <p>
+                <label for="email">Insira um e-mail:</label>
+                <input type="email" name="email" id="email" required>
+                <!--inputs de telefones, urls, emails, dentre vários outros, consultar no MDN-->
+            </p>
+            <button>Enviar</Button>
+        </form>
+
+        <br><img src="https://i.ytimg.com/vi/M4Gplm9UFxE/hqdefault.jpg" alt="Dying light web image">
+    </main>
+    <footer>
+        <p>
+            Rodapé da página, testes etc
+        <ul>
+            <li><a href="028_HTML.html">Contato</a></li>
+            <li><a href="028_HTML.html">Ajuda</a></li>
+        </ul>
+        </p>
+    </footer>
+</body>
+
+</html>

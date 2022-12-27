@@ -1,0 +1,10 @@
+Visual Studio Code - Editor de texto (lucasneiva500 - GitHub)
+Postman - Auxiliar para APIs
+Git Bash - Terminal para Windows
+Node.js - Extensão de terminal
+MongoDB - Banco de dados
+
+"npm i -g nodemon" no terminal, para instalar o nodemon globalmente na máquina
+guia de instalação para o MongoDB = " https://youtu.be/MCpbfYvvoPY "
+
+Alguns links de sites úteis estão disponíveis no arquivo "000_LINKS.html"

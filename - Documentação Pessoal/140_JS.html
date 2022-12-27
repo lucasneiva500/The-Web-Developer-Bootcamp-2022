@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>JS</title>
+
+</head>
+
+<body>
+
+    <nav>
+        <a href="">Home</a>
+    </nav>
+
+    <main>
+        <h1>JavaScript</h1>
+        <hr>
+        <div>
+            <h3>JS Basics: primitive types</h3>
+            <p>
+                JavaScript realiza as ações na página
+                <br>MDN para consulta de funções etc de JavaScript
+                <br>atualizações de página sem precisar recarregar, sistemas de compra com "carrinhos", chat, timer etc
+                <br>é necessário conhecer como o javascript se comunica com o html, com o css e com o navegador
+                <br>
+                <br>JavaScript puro
+                <br>comentários em javascript "// comentários"
+                <br>primitive types (tipos de valores que são armazenados)
+                <br>Number String Boolean Null Undefined / Symbol BigInt
+                <br>
+                <br>melhor lugar para começar é no console do google (inspecionar, console)
+                <br>shift+enter para escrever múltiplas linhas
+                <br>(clear) ctrl+l
+                <br>
+                <br>Number --- inteiros, decimais, negativos, no javascript todos são incluídos em "number", genérico
+                <br>+ (adição) - (subtração) * (multiplicação) / (divisão) % (módulo) **(elevação)
+                <br>ordem das operações em javascript
+                <br>PEMDAS - parenteses, exponenciais, multiplicações, divisões, adições, subtrações
+                <br>módulo (operador de resto)
+                <br>10 % 3 --- 3 entra em 10 várias vezes(3 vezes), e o que sobra é 1
+                <br>comumente usado para saber se o número é impar(odd) ou par(even) (%2 / par=0 /ímpar=1)
+                <br>Nan --- é um número que representa um valor que não é um número
+                <br>(0/0 = 1+ NaN) --- typeof (operador para saber o tipo do valor ou variável)
+                <br>NaN = Not a Number, não é possível fazer cálculos numéricos e esperar algo sem ser NaN
+                <br>
+                <br>Variables --- dar nome a algum valor e armazená-lo para ser reutilizado depois
+                <br>"let someName = value;" (let nome = valor;)
+                <br>(valor += 5;) --- forma abreviada de (valor = valor + 5;), incremento, decremento, mult, div etc
+                <br>(valor --;) --- forma abreviada de (valor = valor - 1;), incremento e decremento de 1 em 1
+                <br>
+                <br>Constants --- variáveis com valores fixos, que não podem ser alterados
+                <br>"const someName = value;" (const nome = valor;)
+                <br>usado para algumas contas que os valores sempre serão os mesmos, como:
+                <br>pi(3,14...), dias da semana(7), coisas mais avançadas no JS, etc
+                <br>
+                <br>Var --- antigamente era o único método de adicionar variáveis no JS
+                <br>"var someName = value;" (var nome = valor;)
+                <br>var e let possuem algumas diferenças, conceitos mais avançados
+                <br>
+                <br>Boolean - valores booleanos, 0 ou 1, utilizando true e false
+                <br>"var someBoolean = true;" (var nome = 1;)
+                <br>"var someBoolean = false;" (var nome = 0;)
+                <br>true e false precisam estar em letras minúsculas
+                <br>
+                <br>Variáveis podem trocar de tipos, depende do valor que é armazenado nela
+                <br>
+                <br>Regras para criar um identificador de variável
+                <br>não pode ter espaços, não começar com números, pode ter $ e _
+                <br>"currentDate" é uma boa prática ao invés de utilizar "current_date" "Current_Date"
+                <br>primeira letra minúscula, e iniciais de palavras seguintes com a primeira letra maiúscula
+                <br>is(someName) é uma prática para nomer variáveis com valores booleanos
+                <br>
+                <br>String --- informações que representam texto
+                <br>representados por ("string")ou('string'), dentro das aspas podem ter espaços, símbolos etc
+                <br>let username = 'nome'
+                <br>aspas simples e aspas duplas podem ser usadas, o ideal é não misturar nem ficar alternando entre
+                elas durante um programa, somente se necessário, como em citações, onde são aspas dentro de aspas,
+                observando qual aspas vai ser mais indicada para a mesma
+                <br>strings são indexados por caractere, cada caractere corresponde a um número, começando no 0 a
+                esquerda, até o último caractere na direita, aumentando gradativamente
+                <br>(let animal = 'polvo';) (animal[2] = l) ((animal.length)=5)
+                <br>polvo
+                <br>01234
+                <br>[2] = 3 caractere, já que o primeiro é o 0 / (length = 5) = tamanho de 5 unidades, não ordem
+                começando do 0
+                <br>concatenação
+                <br>('lol' + 'lol'; = lollol)
+                <br>(let firstName = 'River';) (let lastName = 'Phoenix';)
+                <br>(let fullName = firstName + ' '+ lastName;) fullName = River Phoenix
+                <br>(let result = 1 + 'hi';) result = 1hi (type string)
+                <br>
+                <br>Methods --- toda string tem um conjunto de métodos
+                <br>thing.method()
+                <br>(let msg = 'HELLO';)
+                <br>('msg'.toLowerCase();) (()=hello), deixa todas as letras minúsculas
+                <br>
+                <br>trim
+                <br>(let userInput = ' hello my name is tim ')
+                <br>(userInput.trim()) (()= 'hello my name is tim')
+                <br>remove espaços em branco à direita e à esquerda, permanecendo os dentro dos caracteres
+                <br>
+                <br>é possível utilizar mais de um method ao mesmo tempo
+                <br>(let msg = ' hello') (msg.trim().toUpperCase()) (msg = 'HELLO')
+                <br>em mais de uma função, a ordem de execução é da esquerda para a direita
+                <br>(msg.trim().toUpperCase().toLowerCase()) (msg = 'hello')
+                <br>
+                <br>Arguments --- funções complementares adicionadas aos methods
+                <br>(let tvShow = 'catdog';) (indexOf mostra onde começa a escrita de um elemento)
+                <br>.indexOf(searchTerm);
+                <br>(tvShow.indexOf('cat');) - 0 (começa no 1 caractere)
+                <br>(tvShow.indexOf('dog');) - 3 (começa no 4 caractere)
+                <br>(tvShow.indexOf('z');) - -1 (não existe)
+                <br>
+                <br>slice --- corta um pedaço da string baseado no indexamento dos caracteres
+                <br>(let str = 'supercallifragilisticexpialidocious')
+                <br>str.slice(0,5); --- ('super') index de 0 a 5
+                <br>(str.slice(5); --- ('callifragilisticexpialidocious') index de 5 ao fim
+                <br>(str.slice(-5); --- ('cious') index dos ultimos 5
+                <br>
+                <br>replace --- substituir valores, regular expression utilização mais completa
+                <br>(let msg = '1 2 3 4 5';)
+                <br>msg.replace('3', '6'); --- msg final = '1 2 6 4 5'
+                <br>.replace(searchValue, replaceValue) --- usar ('') em strings
+                <br>
+                <br>repeat --- repete valores
+                <br>(let msg = '123';)
+                <br>msg.repeat(4) --- msg final = '123123123123'
+                <br>.repeat(count)
+                <br>
+                <br>(let product = 'Artichoke';) (let price = 2.25;) (let qty = 5;)
+                <br>'You bought ' + qty + ' ' + product + '. Total is: $' + price*qty
+                <br>(You bought 5 artichoke. Total is: $11.25)
+                <br>
+                <br>Template literals --- criar string com expressões embutidas
+                <br>são usados backticks (`) (Shift + botão à direita do p)
+                <br>dentro dos (``), a expressão (${}) é avaliada como um
+                <br>`You bought ${qty} ${product}. Total is: $${prrice*qty}`
+                <br>é possível adicionar methods aos template literals
+                <br>
+                <br>Null & Undefined
+                <br>Null --- intentional absence of any value. ,is be assigned
+                <br>Undefined --- variables that do not have an assigned value are undefined
+                <br>
+                <br>Math object
+                <br>Math.function
+                <br>PI(3,14etc) round(arredondar) floor(corta o decimal) ceil(aredonda pra cima) abs(valor absoluto)
+                pow(2,3 - 2 elevado a 3)
+                <br>Math.random(); --- número decimal aleatório entre 0 e 1
+                <br>Math.floor(Math.random() *10) + 1; --- número aleatório entre 1 e 10
+                <br>Math.floor(Math.random() * 3) + 20; --- número aleatório entre 20 e 23
+                <br>para alterar o "alcance", é só trocar o número na mult por o número de possibilidades, e o + ao
+                mínimo valor requerido
+                <br>Math.max() --- dentro de () podem ter vários valores, só retornará o maior
+                <br>Math.min() --- dentro de () podem ter vários valores, só retornará o menor
+
+            </p>
+            <h3>decision making (boolean logic)</h3>
+            <p>
+                Operators
+                <br>&gt; // greater than
+                <br>&lt; // less than
+                <br>&gt; // greater than or equal to
+                <br>&lt; // less than or equal to
+                <br>== // equality
+                <br>!= // not equal
+                <br>=== // strict equality
+                <br>!== // strict non-equality
+                <br>
+                <br>1 &gt; 3 // returns false
+                <br>1 &lt; 3 // returns true
+                <br>comparar string é baseado no unicode
+                <br>'A' &gt; 'a' // returns false
+                <br>'A' &lt; 'a' // returns true
+                <br>
+                <br>== // (double equals)
+                <br>checks for equality of value, but not equality of type
+                <br>it coerces both values to the same type and them compare them
+                <br>this can lead to some unexpected results!
+                <br>1 == 1 (returns true)
+                <br>1 == '1' (returns true)
+                <br>0 == false (returns true)
+                <br>converte os valores para o mesmo tipo, depois os compara
+                <br>
+                <br>
+                <br>=== // (triple equals)
+                <br>não converte os valores para o mesmo tipo, somente os compara
+                <br>1 === 1 (returns true)
+                <br>0 === false (returns false)
+                <br>1 === '1' (returns false)
+                <br>
+                <br>!= // (non double equals)
+                <br>1 != 2 (returns true)
+                <br>1 != '2' (returns true)
+                <br>1 != '1' (returns false)
+                <br>
+                <br>
+                <br>
+                <br>!== // (non triple equals)
+                <br>1 !== '1' (returns true)
+                <br>1 !== 2 (return true)
+                <br>1 !== 1 (return false)
+                <br>
+                <br>recomendado sempre usar triple equals, double equals somente em casos necessários
+                <br>=== e !==
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>conditionals (retornam valores booleanos de true e false)
+                <br>o código dentro de {} só roda se a condição for verdadeira
+                <br>condition retorna true or false, function é realizada se a condition for true
+                <br>
+                <br>
+                <br>if
+                <br>if (condition){do function;} --- operador se
+                <br>se a condição for verdadeira, realiza a função descrita entre {}
+                <br>
+                <br>else if
+                <br>precisa ser precedido de if, executa da seguinte maneira,
+                <br>somente se o primeiro if vinvulado for falso, executa o else if
+                <br>else if (condition){do function;} --- operador entao se
+                <br>else if não será executado se o primeiro if (primeira condição) for verdadeira
+                <br>
+                <br>else
+                <br>se nenhuma das condições anteriores, determinadas por if e por else if forem verdadeiras, realizará
+                a else, último recurso se nenhum dos anteriores forem atendidos
+                <br>else (condition){do function;}
+                <br>
+                <br>
+                <br>const userInput = prompt('Insira uma cor primária').toLowerCase();
+                <br>mesmo se o usuário digitar SeGuNdA usando letras maísculas, o método deixará o resultado em segunda
+                <br>
+                <br>if ;; if, else ;; if, else if ;; if, else if, else ;; if, else if, else if, else if, else ;;
+            </p>
+            <h3>writing .jss</h3>
+            <p>
+                <br>arquivo em .js
+                <br>para adicioná-lo no código em html, carregar no final da função &lt;body&gt; no html usando a função
+                <br>&lt;script src="140.js&gt;&lt;/script&gt;
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>() podem ser strings, operações etc
+                <br>console.log() --- printa os valores do console
+                <br>REPL --- read eval print loop --- ordem trabalhando no console do google por ex
+                <br>RE --- em um arquivo, para printar valores é necessário usar o console.log()
+                <br>console.warn() --- printa um aviso
+                <br>console.error() --- printa um erro
+                <br>alert() --- pop-up
+                <br>prompt() --- pop-up de input
+                <br>
+                <br>let userInput = prompt('please enter a number')
+                <br>(userInput = '97') --- valor em string, se tentar adicionar um número, irá concatenuar
+                <br>
+                <br>parseInt(userInput) --- pega os valores int de uma string por ex e transforma em números
+                <br>parseInt('100asdjasiofnasf') --- (returns = 100) (número 100, não string 100)
+                <br>
+                <br>
+                <br>if (password.lenght >= 6) {} --- senha precisa de 6+ caracteres
+                <br>if (password.indexOf(' ') === -1){} --- senha não pode possuir espaços
+                <br>
+                <br>if (password.lenght >= 6) {if (password.indexOf(' ') === -1){console.log('valid
+                password')}else{console.log('insert a valid password')}}
+                <br>é possível mesclar condições, mas lembrando que existem operadores lógicos (E seria o ideal nessa
+                condição, &&)
+                <br>
+                <br>
+                <br>truthy and falsy values
+                <br>all js values have an inherent truthyness or falsyness about them
+                <br>falsy values: false, 0, ''(empty string), null, undefined, NaN
+                <br>truthy values: everything else! (números negativos são verdadeiros, somente 0 é falso)
+                <br>
+                <br>
+                <br>logical operators (mesmo funcionamento de portas lógicas)
+                <br>logical AND && (E lógico) --- (condition1 && condition2)
+                <br>logical OR || (OU lógico) --- (condition1 || condition2)
+                <br>logical NOT ! (NÃO lógico) --- (!condition) // (!(condition1 && condition2))
+                <br>
+                <br>
+                <br>switch (switch case)
+                <br>
+                <br>switch (day) {
+                <br>case 1:
+                <br>console.log('MONDAY!');
+                <br>break;
+                <br>case 2:
+                <br>console.log('TUESDAY!');
+                <br>break;
+                <br>case 3:
+                <br>console.log('WEDNESDAY!');
+                <br>break;
+                <br>case 4:
+                <br>console.log('THURSDAY!');
+                <br>break;
+                <br>case 5:
+                <br>console.log('FRIDAY!');
+                <br>break;
+                <br>case 6:
+                <br>case 7:
+                <br>console.log('WEEKND');
+                <br>break;
+                <br>default:
+                <br>console.log('INVALID NUMBER!')
+                <br>}
+                <br>
+                <br>case funciona como um if, break termina a condição do case, e default funciona como um else
+                <br>case roda até encontrar um break
+                <br>case 6 e case 7 retornam o mesmo resultado, pois o código roda até encontrar um brake
+            </p>
+            <h3>more JS basics: arrays</h3>
+            <p>
+                JavaScript Arrays (matriz)
+                <br>primeira estrutura de dados
+                <br>collection of levels in a game, list of comements on a post, songs in a playlist
+                <br>o conceito são vários slots ordenados em uma variável
+                <br>
+                <br>(var[0] = o que está indexado no espaço 0 de uma variável)
+                <br>[] também é usado em arrays
+                <br>typeof var (onde var é array), retorna "object"
+                <br>
+                <br>creating arrays
+                <br>to make an empty array
+                <br>let var = [];
+                <br>an array of strings
+                <br>let var = ['red', 'orange', 'yellow'];
+                <br>an array of numbers
+                <br>let var [19,22,56,12,51];
+                <br>a mixed array
+                <br>let var [true,68, 'cat', null];
+                <br>
+                <br>let var ['monday', 'tuesday', 'wednesday'];
+                <br>var.lenght = 3
+                <br>index
+                <br>0 = monday
+                <br>1 = tuesday
+                <br>2 = wednesday
+                <br>para saber a primeira letra indexada no item 2 por exemplo, a expressão seria
+                <br>var[2][0] // returns w
+                <br>
+                <br>cada elemento adicionado em um array recebe um indexamento, 0 é o 1 slot, e assim por diante
+                <br>
+                <br>é possível atualizar os valores na array
+                <br>var = ['rad', 'orange', 'yellow']
+                <br>para corrigir o erro em rad, a expressão para alterar seria
+                <br>var[0] = 'red'
+                <br>var agora é ['red', 'orange', 'yellow']
+                <br>
+                <br>empty x N
+                <br>N é o número de slots vazios entre os elementos caso tenha
+                <br>se tiver 7 espaços e os 5 primeiros forem vazios, eles existem, mas não foram definidos
+                <br>returns undefined, em caso de procurar um elemento ainda não adicionado à array
+                <br>
+                <br>métodos em strings, modificam o resultado de acordo com o método utiliza,do mas mantém a variável
+                igual, somente altera a resposta
+                <br>métodos em arrays, adicionam/removem/modificam elementos na variável original
+                <br>
+                <br>Array methods
+                <br>Push (add to end), Pop (remove from end), Shift (remove from start), Unshift (add to start)
+                <br>
+                <br>tentar push ou shift em arrays vazias, retorna undefined
+                <br>
+                <br>
+                <br>push e pop, trabalham no final
+                <br>push adiciona um elemento no final da array, pop remove o último elemento da array
+                <br>
+                <br>movieLine = ['tom', 'nancy']
+                <br>movieLine.push('oliver')
+                <br>movieLine is now ['tom', 'nancy', 'oliver']
+                <br>é possível adicionar mais de um elemento por vez
+                <br>movieLine.push('john', 'eric')
+                <br>movieLine is now ['tom', 'nancy', 'oliver', 'john', 'eric']
+                <br>
+                <br>movieLine.pop() // returns 'eric' (element removed)
+                <br>movieLine is now ['tom', 'nancy', 'oliver', 'john']
+                <br>let person1 = movieLine.pop()
+                <br>person1 = 'john'
+                <br>movieLine is now ['tom', 'nancy', 'oliver']
+                <br>
+                <br>
+                <br>
+                <br>shift e unshift, trabalham no começo
+                <br>unshift adiciona um elemento antes do primeiro elemento da array, shift remove o primeiro elemento
+                <br>
+                <br>movieLine.shift() // returns 'tom' (element removed)
+                <br>movieLine is now ['nancy', 'oliver']
+                <br>let person2 = movieLine.shift()
+                <br>person2 = 'nancy'
+                <br>movieLine is now ['oliver']
+                <br>
+                <br>movieLine.unshift('jerry')
+                <br>movieLine is now ['jerry', 'oliver']
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>more methods
+                <br>
+                <br>concat - merge arrays
+                <br>const array1 = ['a', 'b', 'c'];
+                <br>const array2 = ['d', 'e', 'f'];
+                <br>const array3 = array1.concat(array2);
+                <br>array3 = ['a', 'b', 'c', 'd', 'e', 'f']
+                <br>não modifica as arrays originais, a ordem importa para criar o concat
+                <br>não modifica a array original
+                <br>
+                <br>
+                <br>includes - look for a value, returns true or false
+                <br>array3.includes('d'); --- returns true
+                <br>array3.includes('g'); --- returns false
+                <br>não modifica a array original
+                <br>
+                <br>indexOf - just like string.indexOf
+                <br>array3.indexOf('d'); --- returns [3]
+                <br>array3.indexOf('g'); --- returns [-1]
+                <br>não modifica a array original
+                <br>
+                <br>reverse - reverses an array
+                <br>array3.reverse()
+                <br>array3 is now ['f', 'e', 'd', 'c', 'b', 'a']
+                <br>modifica a array original
+                <br>
+                <br>slice - copies a portion on an array
+                <br>array3.slice(3) --- returns ['c', 'b', 'a']
+                <br>array3.slice(1, 2) --- returns ['e', 'd']
+                <br>array3.slice(-2) --- returns ['b', 'a'] (last 2 items)
+                <br>não modifica a array original
+                <br>
+                <br>splice - removes/replaces elements
+                <br>array3 ['f', 'e', 'd', 'c', 'b', 'a']
+                <br>remove with splice
+                <br>array3.splice(3,2) --- returns ['c', 'b'] (deleted elements)
+                <br>array3 is now ['f', 'e', 'd', 'a']
+                <br>add wiwth splice
+                <br>array3.splice(3,0,'g')
+                <br>array3 is now ['f', 'e', 'd', 'g', a']
+                <br>remove+add with splice
+                <br>array3.splice(2,2,'h')
+                <br>array3 is now ['f', 'e', 'h', a']
+                <br>
+                <br>sort - sorts an array (ordenar)
+                <br>sort() com parênteses vazios, transforamará tudo na array em string e então compara os valores de
+                unidade de código UTF 16, usando o primeiro dígito como referência
+                <br>normalmente é usado algo mais complexo, como
+                <br>var.sort(function(a, b){return a - b;}
+                <br>
+                <br>join - creates a string from an array
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>reference types and equality testing em arrays
+                <br>== e === em arrays fazem a mesma coisa, procuram a referência na memória
+                <br>['hi', 'bye'] === ['hi', 'bye'] // returns false
+                <br>[1] === [1] // returns false
+                <br>[1] == [1] // returns false
+                <br>[] == [] //returns false
+                <br>
+                <br>em arrays, não se compara o conteúdo, o que está dentro da array é irrelevante em arrays
+                <br>em arrays se compara as referências na memória
+                <br>arrays geram como se fossem CPFs na memória, números únicos mesmo em arrays com o conteúdo igual
+                <br>inicialmente comparar arrays só retorna true se elas estiverem linkadas, como por exemplo:
+                <br>var1 = [1,2,3]; // var2 = var1;
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>const usado para criar arrays é útil porque em arrays é possível alterar o conteúdo mesmo com const
+                <br>o que o const se preocupa é que a variável em si não seja reatribuída,"a cápsula sempre será igual"
+                <br>const var = ['1', '2']
+                <br>var = ['1', '2', '3'] // erro, tentando alterar o container do conteúdo
+                <br>var.push('3') // ok, var agora é ['1', '2', '3']
+                <br>
+                <br>
+                <br>nested arrays (arrays dentro de arrays)
+                <br>const jogoDaVelha = [
+                <br>['X', 'O', 'X'],
+                <br>['O', null, 'X'],
+                <br>['O', 'O', 'X']
+                <br>]
+                <br>
+                <br>para encontrar o que está indexado no ponto central por exemplo, é possível usar
+                <br>jogoDaVelha[1][1] // returns null (var[indexLevel1][indexLevel2][indexLevelN])
+                <br>
+                <br>para alterar o valor do null se necessário, o código seria
+                <br>jogoDaVelha[1][1] = 'X';
+            </p>
+            <h3>more JS basics: object literals</h3>
+            <p>
+                JavaScript object literals
+                <br>Objects, assim como array armazena vários valores, mas diferente das arrays, os valores armazenados
+                não são ordenados, são acessados a partir de um "ID"
+                <br>objects are collection of properties, properties are a key-value pair, rather than acessing data
+                using a index, we use custom keys (like a label)
+                <br>
+                <br>object = {property = key - value}
+                <br>using an object, armazena qualquer tipo de valor, a ordem não importa
+                <br>
+                <br>const var = {
+                <br>valor1: 100,
+                <br>valor2: '200',
+                <br>valor3: ['arrayvalor1', 'arrayvalor2']
+                <br>4: 'valor4'
+                <br>};
+                <br>
+                <br>var['valor1'] // returns 100
+                <br>ou
+                <br>var.valor1 // returns 100
+                <br>ou
+                <br>var[4] // returns 'valor4' (essa exceção é para keys usando números)
+                <br>tentar acessar um valor não declarado, retorna undefined
+                <br>valid keys = all keys are converted to strings (except for symbols, wich we haven't covered yet)
+                <br>
+                <br>adicionar e modificar informações em objetos
+                <br>const var = {valor1: 100, valor2: 200};
+                <br>modificar informações
+                <br>var.valor2 = 300; // ou // var['valor2'] = 300; //// valor2 agora é 300
+                <br>adicionar informações
+                <br>var.valor3 = 400; // ou // var['valor3'] = 400;
+                <br>var = {valor1: 100, valor2: 300, valor3: 400};
+                <br>
+                <br>array+objects
+                <br>é possível combinar arrays e objects, um dentro do outro
+                <br>um mini exemplo é um carrinho de compras
+                <br>var[1].valor1
+            </p>
+            <h3>repeating stuff with loops</h3>
+            <p>
+                JavaScript Loops
+                <br>tipos de loops
+                <br>ex: print 'hello' 10 times, sum all numbers in a array
+                <br>for loop, while loop, for...of loop, for...in loop
+                <br>
+                <br>for loop
+                <br>for(
+                <br>[initialExpression];
+                <br>[condition];
+                <br>[incrementExpression]
+                <br>)
+                <br>
+                <br>start at 1, stop at 10, add 1 each time
+                <br>for(let i = 1; i &lt;= 10; i++){console.log(i);} --- é comum usar a letra ('i') ijkl...etc
+                <br>é possível adicionar, subtrair, multiplicar, dividir, mas o mais comum é incremento/decremento
+                <br>-= , +=, ++ e --
+                <br>cria uma nova variável, define um valor inicial
+                <br>faz a condição para que seja realizada um loop --- expressão booleana
+                <br>o que faz se a condição for verdadeira --- inkerman expression
+                <br>
+                <br>
+                <br>infinite loops
+                <br>funciona até a memória do javascript e do browser acabar, gerando crash
+                <br>usa toda a memória do JavaScript
+                <br>for(let i = 20; i &gt;= 0; i++){console.log(i);} --- condição sempre será verdadeira
+                <br>prestar atenção na hora de escrever loops, na condição em que ele será falso
+                <br>
+                <br>const animals = ['lions', 'tigers', 'bears']];
+                <br>for (let i = 0; i &lt; animals.length; i++){console.log(i, animals[i])};}
+                <br>printa todos os nomes indexados e mostrando seu endereço indexado do primeiro ao último
+                <br>for (let i = animals.length - 1; i &gt;= 0; i--){console.log(i, animals[i])};}
+                <br>printa todos os nomes indexados e mostrando seu endereço indexado do último ao primeiro
+                <br>
+                <br>
+                <br>nested loops (loops dentro de loops)
+                <br>for (let i = 1; i &lt;= 10; i++) {
+                <br>console.log(´i is: {i}´)
+                <br> for (let j = 1; j &lt; j++){
+                <br> }
+                <br>}
+                <br>a cada incremento de i, o loop de j roda todos os incrementos
+                <br>usado quando deseja listar todos os elementos de um conjunto de arrays
+                <br>
+                <br>for (let i = 0; i &lt; array.length; i++) {
+                <br>const row = array[i];
+                <br>console.log(`ROW #${i + 1}`)
+                <br> for (let j = 0; j &lt; row.length; j++) {
+                <br> console.log(row[j])
+                <br> }
+                <br>}
+                <br>
+                <br>somar todos os elementos de uma array e retornar o valor após terminar
+                <br>function sumArray(array) {
+                <br> let total = 0;
+                <br> for (let i = 0; i &lt; array.length; i++) {
+                <br> total += array[i];
+                <br> }
+                <br> return total;
+                <br>}
+                <br>
+                <br>
+                <br>while loops
+                <br>while (condition) {expression if condition is true;}
+                <br>let num = 0;
+                <br>while (num &lt; 10){
+                <br>console.log(num);
+                <br>num++;
+                <br>}
+                <br>printa de 0 até 10, para printar de 1 a 10 é só inverter o num++ e o console.log
+                <br>é usado em condições em que realmente não se sabe quando irá acabar, um jogo de xadrez por ex
+                <br>
+                <br>
+                <br>break
+                <br>quebra o loop
+                <br>exemplo
+                <br>let input = prompt ('Hey, say something!')
+                <br>while (true) {
+                <br>input = prompt(input);
+                <br> if (input.toLowerCase() === 'stop copying me') break;
+                <br>}
+                <br>console.log ('OK YOU WIN!')
+                <br>é mais comum usar breaks em whiles
+                <br>
+                <br>
+                <br>for...of loop
+                <br>for (variable of iterable) {statement}
+                <br>for (let var of array) {}
+                <br>for of loops tambem podem ter for of loops dentro
+                <br>for (let row of arrayofarrays) {for (let number of row){console.log(number);}}
+                <br>a nice and easy way of iterating over arrays (or other iterable objects)
+                <br>for of loop funciona exibindo os itens indexados
+                <br>for (let char of 'hello world') {console.log(char)}, cada console log é um item indexado
+                <br>objects literals não são indexados e for...of loops não funcionam neles
+                <br>
+                <br>
+                <br>Object.keys(), Object.values(), Object.entries()
+                <br>funções para saber os identificadores, valores e os pares de um object literal
+            </p>
+            <h3>introducting functions</h3>
+            <p>
+                JavaScript functions
+                <br>functions allow us to write reusable, modular code
+                <br>we define a "chunk" of code that we can then execute at a later point
+                <br>we use them ALL THE TIME
+                <br>códigos reutilizáveis que podem ser alterados
+                <br>
+                <br>writing functions have 2 steps: define, run
+                <br>step 1
+                <br>function funcName(){do something;}
+                <br>registrando a função,
+                <br>definindo uma função, ela não irá rodar, somente quando o nome da função for usado
+                <br>step 2
+                <br>funcName()
+                <br>executando uma função, utilizando seu nome e "()"
+                <br>é importante definir as funções antes de executá-las no código, para não gerrar erros
+                <br>
+                <br>
+                <br>Arguments
+                <br>fuction funcName(parameter) {do function;}
+                <br>definir entradas para functions, para não retornarem sempre o mesmo valor
+                <br>function greet(person) {
+                <br> console.log(`Hi, ${person}!`)
+                <br>}
+                <br>greet() // returns undefined
+                <br>
+                <br>
+                <br>Multiple arguments
+                <br>fuction funcName(argument1, argument2) {do function;}
+                <br>a ordem dos argumentos importa, argumentos vazios geram erros
+                <br>
+                <br>
+                <br>return function
+                <br>output of function, sempre será o final de uma função, nada além de um return é executado
+                <br>return retorna somente uma coisa, pode ser uma array, mas é só uma coisa
+                <br>return para a execução de uma função, termina a função ali
+                <br>function add(x, y) {
+                <br> if (typeof x !== 'number' || typeof y !== 'number') {
+                <br> return false;
+                <br> }
+                <br> let sum = x + y;
+                <br> return sum;
+                <br>}
+                <br>é possível usar funções dentro de funções, exemplo:
+                <br>add(add(1, 5), 9) // returns 15, o valor dos parênteses interiores são executados primeiro
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>leveling up functions
+                <br>SCOPE (variable "visibility")
+                <br>SCOPEs são "bolhas", onde tudo que é executado em seu interior, não altera o resto do programa
+                <br>the location where a variable is defined dictates where we have access to that variable
+                <br>
+                <br>FUNCTION SCOPE
+                <br>variáveis definidas dentro de uma function, só "existem" dentro daquela função
+                <br>variáveis precisam declaradas antes da função, não dentro da função se forem necessárias em outro
+                ponto do programa
+                <br>se existir duas variáveis com o mesmo nome recebendo valores diferentes, uma dentro da function e
+                outra fora da function, dentro da function a definida dentro da function será o valor, pois está mais
+                "próximo", porem se tentarmos acessar essa variável mesmo após executar a função, o valor será o
+                declarado fora da function, pois entra em conflito com o valor declarado dentro da function
+                <br>JavaScript uses the closest version of a var, scoped or not
+                <br>
+                <br>
+                <br>BLOCK SCOPE
+                <br>ifs e loops por exemplos, variáveis declaradas com let em seu interior não são acessíveis no resto
+                do programa, somente dentro do seu scope
+                <br>variáveis declaradas com var são acessíveis após sair de seu block scope
+                <br>const e let só existem no bloco, NÃO é recomendado usar a var, mas se usar, a variável existe fora
+                do scope
+                <br>variáveis declaradas dentro de um bloco só são acessíveis dentro do bloco
+                <br>
+                <br>
+                <br>LEXICAL SCOPE
+                <br>função dentro de uma função por exemplo
+                <br>a função interna tem acesso aos valores declarados na função externa
+                <br>a função externa nãao tem acesso aos valores declarados nas funções internas
+                <br>
+                <br>
+                <br>FUNCTION EXPRESSION
+                <br>maneira diferente de declarar uma função
+                <br>
+                <br>function-keyword (convencional):
+                <br>function add(x, y) {return x + y;}
+                <br>
+                <br>function expression
+                <br>const add = function (x, y) {return x + y;}
+                <br>a função não tem um nome nesse caso, o nome é o da variável
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>HIGHER ORDER FUNCTIONS
+                <br>funções que funcionam/operam com outras funções
+                <br>funções que aceitam outras funções como argumento e também retornam funções
+                <br>
+                <br>function called using a function
+                <br>function callTenTimes(func) {
+                <br> for (i = 0; i &lt; 10; i++) {
+                <br> func ();
+                <br> }
+                <br>}
+                <br>
+                <br>function returning a function
+                <br>function mysteryFunc() {
+                <br> const rand = Math.random();
+                <br> if (rand > 0.5) {
+                <br> return function() {func1}
+                <br> } else {
+                <br> return function(); {func2}
+                <br> }
+                <br>}
+                <br> // const = mistery = mysteryFunc() // mistery recebe 1 dos 2 valores retornados de mysteryFunc
+                <br>
+                <br>function isBetween(num) {return num &gt;= 50 && num &lt;= 100}
+                <br>valor entre 50 e 100 retorna true, valor acima de 100 ou abaixo de 50, retorna false
+                <br>
+                <br>
+                <br>METHODS (FUNCTIONS + OBJECTS)
+                <br>methods - we can add functions as properties on objects
+                <br>todo método é uma função, mas nem toda função é um método
+                <br>
+                <br>const myMath = {
+                <br> PI: 3.14,
+                <br> square: function (num) {return num * num;},
+                <br> cube: function(num) {return num ** 3;}
+                <br>};
+                <br> myMath.cube(2) // returns 8 (** = ^)
+                <br> myMath['cube'](4) // returns 64
+                <br>
+                <br>function shorthand (atalho de digitação para o mesmo escrito em cima)
+                <br>const myMath = {
+                <br> PI: 3.14,
+                <br> square(num) {return num * num;},
+                <br> cube(num) {return num ** 3;}
+                <br>};
+                <br> myMath.cube(2) // returns 8 (** = ^)
+                <br> myMath['cube'](4) // returns 64
+                <br>não esquecer as (,) e (;) para não gerar erros de código
+                <br>
+                <br>
+                <br>'This' in methods
+                <br>funções dentro de objetos não tem acesso às outras características do mesmo objeto, this relaciona
+                com o nível superior, no caso de dentro de um objeto, ele mesmo
+                <br>use the keyword this to access other properties on the same object
+                <br>const fullName = {
+                <br> firstName: 'michael'
+                <br> lastName: 'jackson'
+                <br> funcName() {console.log 'michael jackson'}
+                <br>} // fullName.funcName();
+                <br>não tem como relacionar diretamente com as variáveis em firstName e lastName, por isso se usa this
+                <br>usar this de sem relacionar ao nível de maneira correta, ele vai relacionar a "Window"
+                <br>
+                <br>usando "this" da forma correta:
+                <br>const fullName = {
+                <br> firstName: 'michael'
+                <br> lastName: 'jackson'
+                <br> funcName() {console.log `${this.firstName} ${this.lastName`}}
+                <br>} fullName.funcName();
+                <br>the value of this depends on the invocation context of the function it is used in
+                <br>refere-se ao objeto a esquerda do (.)
+                <br>// retorna todos os valores acessíveis {console.log('THIS IS:', this)}
+                <br>// Window --- objeto principal onde armazena tudo no JavaScript, é o nível superior
+                <br>
+                <br>
+                <br>Try/Catch --- detecção de erros e impedir que eles causem problemas no programa
+                <br>Uncaught Syntax Errors
+                <br>solicitações assíncronas, api, conectar na internet e outros podem ser resolvidos com try e catch
+                <br>try {function 1;} catch {function2 if function1 doesn't work;}
+                <br>tenta executar o que está em try, e se algo der errado, então executa o que está em catch
+                <br>catch (e) {console.log (e);} --- printa o erro (e)
+            </p>
+            <h3>callbacks & array methods</h3>
+            <p>
+                Map, Filter, ForEach, Arrow Functions, Some & Every, Reduce
+                <br>suconjuntos de array methods, exigem que passemos funções
+                <br>
+                <br>
+                <br>ForEach
+                <br>array.forEach(nomeFun () {funcionalidadeFunc})
+                <br>em uma array, realiza um "método" para cada um dos elementos indexados nela
+                <br>accepts a callback function, calls the function once per element in the array
+                <br>const numbers = [1, 2, 3, 4, 5]
+                <br>numbers.forEach(function (el) {console.log(el);})
+                <br>(((for (let el of numbers) {console.log(el);})))
+                <br>
+                <br>
+                <br>Map
+                <br>const arrayNova = arrayOriginal.map (function (index) {return index+método etc});
+                <br>funciona de maneira similar ao ForEach, porém é usado para criar uma nova array baseada em outra
+                existente, retorna valores para cada elemento
+                <br>creates a new array with the results of calling a callback on every element in the array
+                <br>const texts = ['rofl', 'lol', 'omg', 'ttyl'];
+                <br>const caps = texts.map(function(t) {return t.toUpperCase();})
+                <br>texts; // ['rofl', 'lol', 'omg', 'ttyl']
+                <br>caps; // ['ROFL', 'LOL', 'OMG', 'TTYL']
+                <br>
+                <br>
+                <br>Arrow Functions
+                <br>"syntactically compact alternative" to a regular function expression
+                <br>escrever uma função sem precisar escrever 'function'
+                <br>const sum = function sumNumbers(x, y){return x + y;}
+                <br>arrow functions forma abreviada de escrever funções que serão armazenadas em variáveis
+                <br>const sum = (x, y) =&gt; {return x + y;}
+                <br>
+                <br>
+                <br>Implicit return in arrow functions
+                <br>só funciona se tiver apenas uma instrução,uma expressão no corpo de sua função
+                <br>trocar as chaves "{}" por parênteses "()" para não precisar usar a palavra "return" em arrow
+                functions
+                <br>const rollDie = () =&gt; (Math.floor(Math.random*6) + 1)
+                <br>forma mais abreviada ainda
+                <br>const add = (a, b) =&gt; a + b
+                <br>
+                <br>
+                <br>Arrow functions wrapup, forma mais reduzida possível depois de usar arrow methods
+                <br>const newMovies = movies.map(movie =&gt; `${movie.title} - ${movie.score / 10}`)
+                <br>
+                <br>
+                <br>filter
+                <br>const arrayOriginal = arrayNova.filter(fN =&gt; {return condição;})
+                <br>creates a new array with all elements that pass the test implemented by provided function
+                <br>quando a condição retorna true, valida o elemento e o incrementa na nova array a ser criada
+                <br>const nums = [9, 8, 7, 6, 5, 4, 3, 2, 1];
+                <br>const odds = nums.filter(n =&gt; {return n % 2 === 1;})
+                <br>// odds = [9, 7, 5, 3, 1]
+                <br>é possível utilizar um map utilizando o resultado de um filter
+                <br>movies.filter(m =&gt; m.score &gt; 80).map(m =&gt; m.title)
+                <br>// filter + map sendo utilizados
+                <br>
+                <br>
+                <br>função escrita da forma completa
+                <br>
+                <br>function validUserNames (usernames) {
+                <br> return usernames.filter(function(username) {
+                <br> return username.length &lt; 10;
+                <br> });
+                <br>}
+                <br>
+                <br>
+                <br>função escrita da forma abreviada
+                <br>
+                <br>const validUserNames = (usernames) =&gt; {
+                <br> return usernames.filter((username) =&gt; {return username.length &lt; 10});
+                <br>};
+                <br>
+                <br>
+                <br>const ArrayNova = (entradaArrayNova) =&gt; {
+                <br> return entradaArrayNova.filter((indexEntradaArrayNova) =&gt; {return condição});
+                <br>};
+                <br>
+                <br>
+                <br>every
+                <br>testa uma condição em todos os elementos de uma array, returna true e false
+                <br>arrayOriginal.every(condição)
+                <br>tests whether all elements in the array pass the provided function. It returns a boolean value
+                <br>const words = ['dog', 'dig', 'log', 'bag', 'wag']
+                <br>words.every (word =&gt; {return word.length ===3;}) // true
+                <br>words.every (word =&gt; word[0] === 'd') // false
+                <br>words.every (w =&gt; {
+                <br> let last_letter = w[w.length -1];
+                <br> return last_letter === 'g';
+                <br>}) // true
+                <br>
+                <br>const allEvens = (array) => {
+                <br>return array.every(Num => Num % 2 === 0);
+                <br>}
+                <br>
+                <br>some
+                <br>arrayOriginal.some(indexArray =&gt; condição)
+                <br>testa uma condição em todos os elementos, e se pelo menos um atender a condição, retorna true
+                <br>const words = ['dog', 'dig', 'log', 'bag', 'wag']
+                <br>words.some (word =&gt; word[0] === 'd') // true
+                <br>
+                <br>
+                <br>reduce
+                <br>executes a reducer function on each element of the array. resulting in a single value
+                <br>[3, 5, 7, 9 ,11].reduce((accumulator, currentValue) =&gt; {
+                <br> return accumulator + currentValue;
+                <br> });
+                <br>accumulator representa o total(ou valor armazenado), current value representa o valor de cada
+                elemento
+                <br>
+                <br>achar o valor mínimo em uma array de números
+                <br>const minPrice = prices.reduce((min, price) &gt; {
+                <br> if (price &lt; min) {
+                <br> return price;
+                <br> }
+                <br> return min;
+                <br>})
+                <br>é possível definir um ponto inicial para o accumulator,
+                <br>const evens = [2, 4, 6, 8];
+                <br>evens.reduce((sum, num) =&gt; sum + num, 100 ) // 3 slot de argumento é o ponto incial do
+                accumulator
+                <br>
+                <br>
+                <br>arrow functions & this
+                <br>this dentro de uma arrow function tem características diferentes
+                <br>const person = {firstName: 'Viggo', lastName: 'Mortensen', fullName = () =&gt; {${return
+                `this.firstName}$ {this.lastName}`}}
+                <br>//returns undefined undefined, this se refere à window
+                <br>const person = {firstName: 'Viggo', lastName: 'Mortensen', fullName = function() {${return
+                `this.firstName}$ {this.lastName}`}}
+                <br>//returns fullName correct
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>setTimeout and setInterval
+                <br>servem de delays para o programa
+                <br>setTimeout(function, delay in ms) --- é executado a função depois do delay em milisegundos
+                <br>setInterval(function, interval in ms) --- a cada intervalo em ms, executará a função
+                <br>const id setInterval(function, interval in ms) // clearInterval(id) --- para a execução do "loop"
+            </p>
+            <h3>funções recentes do JS</h3>
+            <p>
+                default parameters (the old way)
+                <br>resultado se o usuário não colocar todos os dígitos "esperados" em uma função
+                <br>function multiply(a, b) {
+                <br> b = typeof b !== 'undefined' ? b : 1;
+                <br> return a * b;
+                <br>}
+                <br>multiply(7); // returns 7
+                <br>multiply(7, 3); // returns 21
+                <br>// padrão para b = 1
+                <br>
+                <br>default parameters (the new way)
+                <br>function multiply(a, b = 1) {
+                <br> return a*b;
+                <br> }
+                <br>multiply(4); // returns 4
+                <br>multiply(4, 5); // returns 20
+                <br>// padrão para b = 1
+                <br>msg = 'Hey there!' // default para string com ''
+                <br>
+                <br>
+                <br>spread in function calls
+                <br>...
+                <br>avalia uma array analisando os elementos de forma separada
+                <br>spread syntax allows an iterable such as an array to be expanded in places where zero or more
+                arguments (for function calls) or elements (for array literals) are expected, or an object expression to
+                be expanded in places where zero or more key-value pairs (for object literals) are expected
+                <br>expands an iterable (array, string,etc.) into a list of arguments
+                <br>Math.max(nums) --- pode retornar NaN ou undefined, pois compara a array
+                <br>Math.max(...nums) --- retorna o maior valor, comparando os elementos da array individualmente
+                <br>console.log (nums) --- returns [1, 10, 2, 20, 90, 9, 5, 1000]
+                <br>console.log (...nums) --- returns '1 10 2 20 90 9 5 1000' (elementos individuais)
+                <br>
+                <br>
+                <br>spread with array literals
+                <br>...
+                <br>create a new array using an existing array. Spreads the elements from one array into a new array
+                <br>junta arrays por exemplo
+                <br>const GroupA = ['blue', 'red', 'violet']
+                <br>const GroupB = ['black', 'grey', 'white']
+                <br>const allGroups = [...groupA, ...groupB]
+                <br>[...'hello'] // returns ['h', 'e', 'l', 'l', 'o']
+                <br>
+                <br>
+                <br>spread with objects
+                <br>copies properties from one object into another object literal
+                <br>combinar objetos, criar um novo, ajustar, colocar propriedades faltantes, etc
+                <br>const feline = {legs: 4, family: 'Felidae'};
+                <br>const canine = {isFurry: true, family: 'Caninae'}
+                <br>{...feline, color: 'black'}
+                <br>// retorna um novo objeto com todas as características de feline, + color: 'black'
+                <br>const catDog = {...feline, ...canine}
+                <br>// retorna todas as características são copiadas, porém como há um conflito em "family", o último
+                elemento copiado tem a característica que prevalece, no caso family seria 'Caninae', pois ele foi
+                copiado por último
+                <br>se for usado em uma string retorna como o nome da característica o index
+                <br>{...'hello'} // returns {0: 'h', 1: 'e', 2: 'l', 3: 'l', 4: 'o'}
+                <br>é útil em caso em que um usuário coloca informações como email, senha e usuário, e é possível criar
+                a partir uma cópia com todas essas informações junto a um id por exemplo e se ele é um perfil
+                administrador ou não 'id', 'isAdmin'
+                <br>
+                <br>
+                <br>rest
+                <br>agrupa todos os elementos em uma única array
+                <br>não funciona dentro de arrow functions
+                <br>it looks like spread, but it's not!
+                <br>collects all remaining arguments into an actual array
+                <br>function sumAll (...nums) {
+                <br> let total = 0;
+                <br> for (let n of nums) total += n;
+                <br> return total;
+                <br> }
+                <br> //sumAll (1, 2, 3, 4, 5) returns 15
+                <br>
+                <br>sem o rest param retorna um object literal
+                <br>function sum() {console.log (arguments);}
+                <br>sum(34, 65, 66) // returns arguments(3) {0: 34, 1: 65, 2: 66}
+                <br>
+                <br>com o rest param retorna todos os elementos da input (slot) dentro de uma array
+                <br>function results(gold, silver, ...everyoneElse) {console.log (`GOLD: ${gold}; SILVER: ${silver};
+                PARTICIPATION: ${...everyoneElse}`);}
+                <br>results('tammy', 'tommy', 'tedd', 'travis', 'tom')
+                <br>// returns 'GOLD: tammy; SILVER: tommy; PARTICIPATION: tedd, travis, tom'
+                <br>
+                <br>sum2 () {return arguments.reduce((total, el) =&gt; total + el)}
+                <br>need use rest params
+                <br>sum2 (...nums) {return arguments.reduce((total, el) =&gt; total + el)}
+                <br>soma totos os elementos
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>destructuring
+                <br>a short, clean syntax to 'unpack': values from arrays, properties from objects into distinc
+                variables
+                <br>
+                <br>destructuring arrays
+                <br>const scores = [900000, 800000, 700000, 60000, 500000, 400000];
+                <br>para armazenar o primeiro valor (mais alto) em uma variável, o método sem usar destructuring seria
+                <br>const highScore = scores [0];
+                <br>const secondHighScore = scores[1];
+                <br>
+                <br>usando destructuring array:
+                <br>const [gold, silver, bronze, ...others] = scores;
+                <br>gold = 900000, silver = 800000, bronze = 700000, others = [600000, 500000, 400000]
+                <br>a ordem importa, por relacionar o ... com os index dentro da array
+                <br>
+                <br>
+                <br>destructuring objects
+                <br>const user = {email: 'abc@gmail.com', password: '@1Aabc', firstName: 'Michael', lastName: 'Jackson'}
+                <br>para armazenar o nome completo e o emailsem usar o destructuring seria:
+                <br>const firstName = user.firstName;
+                <br>const lastName = user.lastName;
+                <br>const email = user.email;
+                <br>
+                <br>usando destructuring object:
+                <br>const {email, firstName, lastName} = user;
+                <br>email = abc@gmail.com, firstName = Michael, lastName = Jackson
+                <br>para renomear uma propriedade extraída é usado // const {varOriginal: novaVar} = objectOriginal;
+                <br>const {firstName: primeiroNome, lastName: ultimoNome} = user;
+                <br>primeiroNome = Michael, ultimoNome = Jackson
+                <br>const {email = 'não confirmado'}
+                <br>se não existir um valor dentro de email, ele criará um valor padrão para esse caso, que retona 'não
+                confirmado'
+                <br>
+                <br>
+                <br>destructuring param:
+                <br>para retornar o nome completo sem usar destructuring seria
+                <br>function fullName(user) {return `${user.firstName} ${user.lastName}`
+                <br>
+                <br>usando destructuring param:
+                <br>function fullName({firstName, lastName}) {return `${firstName} ${lastName}`}
+                <br>() --- espera um object, então os {} "puxam" os valores do objeto
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <a href="">About</a>
+    </footer>
+
+    <script src="140.js"></script>
+
+</body>
+
+</html>

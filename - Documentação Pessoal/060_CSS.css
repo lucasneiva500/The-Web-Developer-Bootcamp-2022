@@ -1,0 +1,148 @@
+/*comentários em css*/
+
+/*no MDN, os recursos com um frasco, são recursos experimentais, podem apresentar erros*/
+
+/*
+*
+{
+    color: rgb(0, 255, 0);
+    background-color: black;
+}
+*/
+html{font-family: 'Josefin Sans', sans-serif;}
+h1
+{
+    color: blue;
+    text-align: center;
+    font-weight: normal;
+    text-decoration: black underline solid;
+    letter-spacing: 10px;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2{color: blueviolet;}
+button
+{
+    color: rgb(255, 0, 170);
+    background-color: rgb(17, 211, 211);
+}
+p
+{
+    color: rgb(238, 39, 238);
+    /* background-color:rgb(155, 202, 255); */
+    background-image: url("https://images.unsplash.com/photo-1578070181910-f1e514afdd08?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=933&q=80");
+    background-size: cover;
+    text-align: left;
+    font-weight: normal;
+    line-height: 2;
+}
+a
+{
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+nav
+{
+    background-color: black;
+    text-align: center;
+}
+/* body{background-image: burlywood;} */
+body
+{
+    background-image: url("https://images.unsplash.com/photo-1537204319452-fdbd29e2ccc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80");
+    background-size: contain;
+}
+main{background-color: rgb(182, 140, 50);}
+footer
+{
+    background-color: black;
+    text-align: center;
+}
+#button1
+{
+    color: white;
+    background-color: darkblue;
+}
+span
+{
+    color:white;
+    background-color: #f0120f;
+    font-family: fantasy;
+    text-align: center;
+    font-size: 20px;
+}
+.lorems
+{
+    color: white;
+    background-color: #1010ff;
+    font-size: smaller;
+}
+body nav a
+{
+    color: yellow;
+}
+nav a:hover
+{
+    transition: ease-in-out 1s;
+    color: black;
+    background-color: white;
+}
+footer a:hover
+{
+    transition: ease-in-out 250ms;
+    color: black;
+    background-color: red;
+}
+button:active{background-color: purple;}
+input[type="checkbox"]:checked{box-shadow: 0 0 0 3px orange;}
+.vermelhos:nth-of-type(2n){background-color: white}
+h2::first-letter{font-size: 30px;}
+p::first-line{color: red;}
+p::selection
+{
+    background-color: black;
+    color: orange;
+}
+br::selection
+{
+    background-color: black;
+    color: orange;
+}
+nav
+{
+    width: 100px;
+    height: 50px;
+    border-width: 2px;
+    border-left-width: 5px;
+    border-color: white;
+    border-left-color: brown;
+    border-style: solid groove none inset;
+    box-sizing: border-box;
+    border-radius: 10%;
+    padding-top: 15px;
+    margin: auto;
+}
+button
+{
+    padding: 5px 10px
+}
+/* 
+body
+{
+    margin:0 0 0 5px;
+}
+*/
+body
+{
+    width: 99%;
+    margin: 0 auto;
+}
+button:hover
+{
+    cursor: pointer;
+    border-color: rgb(0, 255, 0);
+    transform: translateY(-0.25em);
+    transition: 0.25s;
+}

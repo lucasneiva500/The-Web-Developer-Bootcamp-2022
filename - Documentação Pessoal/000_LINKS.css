@@ -1,0 +1,14 @@
+* {
+    background-color: #000;
+    color: #0f0;
+    
+}
+*::selection{
+    color: #f00;
+}
+nav a:hover, footer a:hover {
+    color: #fff;
+}
+main div p a:hover {
+    color: #00f;
+}

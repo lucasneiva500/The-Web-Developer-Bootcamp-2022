@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML3</title>
+</head>
+
+<body>
+    <nav>
+        <a href="020_HTML.html">Home</a>
+    </nav>
+
+    <main>
+        <h1>Formulário de Registro</h1>
+        <form action="028_HTML.html">
+            <div>
+                <label for="primeironome">Primeiro Nome:</label>
+                <input id="primeironome" type="text" name="primeironome" required>
+                <label for="segundonome">Sobrenome:</label>
+                <input id="segundonome" type="text" name="segundonome" required>
+            </div>
+
+            <div>
+                <p>
+                    Selecione o tipo de entrada:
+                </p>
+                <div>
+                    <input type="radio" name="entrada" id="e_meia" value="Meia-Entrada">
+                    <label for="e_meia">Meia-Entrada</label>
+                </div>
+                <div>
+                    <input type="radio" name="entrada" id="e_integral" value="Entrada Integral">
+                    <label for="e_integral">Entrada Integral</label>
+                </div>
+                <div>
+                    <input type="radio" name="entrada" id="e_vip" value="Entrada VIP">
+                    <label for="e_vip">Entrada VIP</label>
+                </div>
+            </div>
+
+            <div>
+                <label for="email">Insira seu e-mail:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="senha">Insira uma senha:</label>
+                <input type="password" name="senha" id="senha" minlength="4" maxlength="12" required>
+            </div>
+
+            <div>
+                <label for="lote">Escolha o lote desejado:</label>
+                <select name="lote" id="lote">
+                    <option value="l_1">1</option>
+                    <option value="l_2">2</option>
+                    <option value="l_3">3</option>
+                    <option value="l_4">4</option>
+                    <option value="l_5">5</option>
+                </select>
+            </div>
+
+            <div>
+                <input type="checkbox" name="concordar_tos" id="concordar" unchecked required>
+                <label for="concordar">Eu concordo com os termos de serviço</label>
+            </div>
+
+            <button>Concluir cadastro</button>
+        </form>
+    </main>
+
+    <footer>
+        <a href="020_HTML.html">Contato</a>
+        <br>
+        <a href="020_HTML.html">Ajuda</a>
+    </footer>
+
+</body>
+
+</html>

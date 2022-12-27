@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>CSS</title>
+    <!--<link rel="stylesheet" href="060_CSS.css">-->
+    <!--link = vincular um arquivo .css a um arquivo .html-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,400;1,700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav>
+        <a href="https://www.google.com/">Google</a>
+    </nav>
+
+    <main>
+        <h1>CSS</h1>
+        <hr>
+        <div>
+            <h2>Sintaxe CSS = seletor { propriedade : valor; }</h2>
+            <p>
+                <span>sistemas de cores etc</span>
+                <br>h1{color: blue;} --- todos os elementos de h1 receberão a cor azul
+                <br>h2{color: blueviolet;} --- todos os elementos de h2 receberão a cor violeta azul
+                <br>button
+                <br>{
+                <br> color: rgb(255, 0, 170);
+                <br> background-color: rgb(17, 211, 211);
+                <br>} --- todos os botões recebem a cor magenta na escrita e a cor ciano de fundo
+                <br>p
+                <br>{
+                <br> color: rgb(238, 39, 238);
+                <br> background-color:rgb(155, 202, 255)
+                <br>} --- todos os parágrafos recebem a cor magenta na escrita e azul fosco de fundo
+                <br>a{color: red;} --- tpdos os hyperlinks recebem a cor vermelha
+                <br>
+                <br>cores em hexadecimal = #ffff00 (amarelo), dois digitos para r, g, b, ff em hexadecimal = 255 decimal
+                <br>variável{color: #FFFF00;} --- cor em amarelo para a variável
+                <br>variável{color: #FF0} --- cor em hexadecimal reduzido, utilizável quando há digitos iguais
+                <br>
+                <br>nav{background-color: black;}
+                <br>body{background-color: burlywood;}
+                <br>main{background-color: rgb(182, 140, 50);}
+                <br>footer{background-color: black;}
+                <br>
+                <br>
+            </p>
+            <p>
+                <span>sistemas de texto etc</span>
+                <br>/*comentários em css*/
+                <br>var{text-align: center;} --- center, right, left,
+                <br>var{font-weight: normal;} --- normal, bold,
+                <br>var{text-decoration: underline;} --- sublinhado, overline em cima, line-through cortando
+                <br>var{text-decoration: black underline;} --- controle de cor da linha
+                <br>var{text-decoration: black underline wavy;} --- controle de estilo
+                <br>var{text-decoration: none;} --- remover linha sublinhada de "a"(hyperlinks) por exemplo
+                <br>var{line-height: 2;} --- multiplicador de altura do texto
+                <br>var{letter-spacing: 10px;} --- distância em pixels entre letras
+                <br>
+                <br>tamanhos de letras etc; descritos, pxs, ems, %,
+                <br>relativos: em, rem, vh, vw, %, outros
+                <br>absolutos: px, pt, cm, in, mm
+                <br>PX absoluta mais comum, não é exatamente um pixel, não recomendado em sites responsivos
+                <br>mms in usados pra imprimir etc, não comuns
+                <br>
+                <br>var{font-family: Arial;} --- fonte Arial
+                <br>var{font-family: Arial, Helvetica, sans-serif;} --- arial 1 opção, opções ordenadas de backups
+                <br>var{font-family: fantasy;} --- biblioteca de fontes
+                <br>
+                <br>
+            </p>
+            <p>
+                <span>seletores etc</span>
+                <br>selector {property: value;}
+                <br>seletor pode selecionar um conjunto de elementos, por exemplo h1{color:purple;}
+                <br>
+                <br>seletor universal
+                <br>*{color: black;} --- seleciona tudo e deixa preto
+                <br>
+                <br>seletor de elementos
+                <br>button{font-size: 30px;} --- todos os botões terão o tamanho da fonte de 30px
+                <br>
+                <br>seletor de elementos combinados
+                <br>h1,h2{color: black;} --- todos os elementos de h1 e h2 serão pretos
+                <br>
+                <br>seletor de id
+                <br>#button1{color: white;} --- o elemento com o id "button1" será branco
+                <br>se usar um seletor de elementos e um seletor de id, todos os elementos vinculados a partir do id
+                terão as características fornecidas para o id, mas os elementos sem id especificado no seletor terão a
+                característica especificada para o elemento geral
+                <br>IDS NÃO PODEM SER REPETIDOS
+                <br>
+                <br>seletor de classe
+                <br>.vermelhos{color: red;} --- todos os elementos da classe vermelhos recebem a cor vermelha
+                <br>segue a mesma lógica dos ids, os elementos da classe tem prioridade sobre os sem identificação
+                <br>classes "genéricas", para vários elementos que serão daquele jeito, porém sem usar excessivos ids
+                <br>
+                <br>seletor descendente
+                <br>body nav a {color: yellow;} --- elementos "a" dentro de "nav" dentro de "body" receberão a cor
+                amarela
+                <br>
+                <br>seletor adjacente (combinadores) "+"
+                <br>h2 + button {color: red} --- os botões no mesmo nível após h2 receberão a cor vermelha
+                <br>
+                <br>seletor descendente direto ou (filho direto)
+                <br>footer > a {color: white} --- o elemento "a" (hyperlink) que vem após o footer DIRETAMENTE (DIRECT
+                CHILD) recebe a cor branca
+                <br>
+                <br>seletor de atributo
+                <br>input[type="password"] {color: green} --- os inputs do tipo senha receberão a cor verde
+                <br>a[href*="google"] --- hyperlinks que tem a palavra google, no começo ou no final
+                <br>ATENÇÃO, uma classe não é um atributo
+                <br>
+                <br>Pseudo classes (:)
+                <br>tipos de modificadores, palavras chaves, adicionadas ao final de um seletor para especifica um
+                estado particular dos elementos selecionados, mouse por cima
+                <br>
+                <br>IDs geram particularidades quando se tenta usar as pseudo classes, atenção
+                <br>
+                <br>hover active ckecked nth-of-type(Xn)
+                <br>hover checked first first-child last-child hover not() nth-child() nth-of-type()
+                <br>
+                <br>a:hover{color: black;} --- "a"(hyperlinsk) mouse por cima, muda a cor do texto para preto
+                <br>button:active{background-color: purple;} --- muda a cor dos botões quando ativados
+                <br>input[type="checkbox"]:checked{box-shadow: 0 0 0 3px orange;} --- muda a sombra quando checkboxs
+                estão marcadas
+                <br>.vermelhos:nth-of-type(2n){background-color: white} --- a cada 2 itens, o primeiro terá a cor de
+                fundo branca [nth-of-type(2) --- apenas o segundo item tera a cor de fundo branca]
+                <br>
+                <br>seletores podem ser combinados, exemplo seletores de classes com seletores descendentes
+                <br>.vermelhos a {color: darkred} --- todos os elementos "a" (hyperlinks), dentro da classe "vermelhos"
+                receberão a cor vermelho escuro
+                <br>
+                <br>Pseudo elementos (::)
+                <br>modificadores dos elementos, estilizar a primeira letra ou primeira linha por exemplo
+                <br>
+                <br>::after
+                <br>::before
+                <br>::first-letter
+                <br>::first-line
+                <br>::selection
+                <br>
+                <br>h2::first-letter{font-size: 30px;} --- a primeira letra de todos os elementos h2 terá tamanho de
+                30px
+                <br>p::first-line{color: red;} --- a primeira linha de todos os parágrafos será vermelha
+                <br>p::selection{background-color: black; color: orange;} --- quando selecionados, os elementos do
+                parágrafo serão da cor laranja com o fundo preto
+                <br>
+            </p>
+            <p>
+                <span>cascada</span>
+                <br>quando existem múltiplos elementos para o mesmo elemento, o último é o que prevalece, segue uma
+                ordem de cascada, vai carregando primeiro os de cima depois os debaixo, e o debaixo é o que efetivamente
+                carrega na página
+                <br>exemplo
+                <br>h1{color: yellow;}
+                <br>h1{color: black;}
+                <br>a cor de h1 será preta, pois foi o último a ser carregado, mantendo a característica de cor preta
+            </p>
+            <p>
+                <span>especificidade</span>
+                <br>somente é importante quando propriedades geram conflitos
+                <br>mais de um estilo aplicável no mesmo elemento, gerando "erros"
+                <br>exemplo:
+                <br>.botoes button:hover{background-color: red;}
+                <br>button:hover{background-color: blue;}
+                <br>todos os botões terão o fundo azul quando pairados, menos os botões da classe "botoes", pois possuem
+                uma classe definida, mantendo assim prioridade aos elementos quando a cor entra em conflito
+                <br>outro exemplo:
+                <br>p{color: yellow;} --- seletor de elementos
+                <br>section p{color: blue;} --- seletor de elementos + seletor de elementos (prioridade)
+                <br>
+                <br>Ordem de prioridade:
+                <br> ID &gt; CLASSE &gt; ELEMENTO
+                <br> 0 0 0 --- quanto mais específico, maior a prioridade
+                <br>estilos dentro do código html são mais específicos que ids, mas não é recomendado usá-los
+                <br>
+                <br>no inspecionar do google na parte de css, dá pra ver as propriedades que estão efetivamente fazendo
+                alterações em um elemento, e também visível as outras que aplicam algum tipo de conflito, porém estão
+                "perdendo" por ser menos específica ou por vir em cima
+                <br>
+                <br>a excessão !important
+                <br>usado após definir o valor da propriedade, é o mais específico possível
+                <br>não recomendado
+                <br>
+                <br>se definirmos uma cor para o body, e depois uma cor para o paragrafo, a do paragrafo irá prevalecer
+                por ser mais específica, alguns elementos não herdam cores por padrão por exemplo, como botões e inputs
+                de texto, existe um comando para isso que é, no caso do botão, button{color: inherit;}, assim ele
+                herdará a cor da sua seção por exemplo, não é muito comum de ser utilizado
+                <br>
+                <br>Ordem de prevalência com todos os elementos de especificidade
+                <br>!important &gt; dentro do código html &gt; id &gt; classe &gt; elemento
+            </p>
+            <p>
+                <span>modelos de caixas</span>
+                <br>Width(largura) e Height(altura)
+                <br>nav{width: 100px; height: 50px;} --- a divisão "nav" terá altura de 50px e largura de 100px
+                <br>
+                <br>Border(borda)
+                <br>bordas são altamente customizáveis, olhar os comandos de referência para a personalização completa
+                <br>border-width border-color border-style
+                <br>border-width --- largura da borda, geralmente usado em pxs
+                <br>box-sizing --- define se a borda vai ser para mais ou do tamanho da altura/largura espeficicadas
+                <br>border-color --- cor da borda
+                <br>border-style --- estilo da borda, cima direita baixo esquerda, ordem para varios tipos de borda
+                <br>é possível utilizar em sequência no mesmo comando os elementos largura estilo e cor, seguindo o
+                comando var{border: medium dashed green;}, existem alguns outros comandos para "juntar comandos em um
+                só", consultar no MDN a referência dos comandos
+                <br>border-radius --- raio das extremidades da borda, 50% é usado para criar círculos
+                <br>
+                <br>Padding(preenchimento, espaçamento)
+                <br>espaço entre o conteúdo real e a borda de um elemento
+                <br>padding-left padding-right padding-bottom pading-top padding
+                <br>atalhos de digitação
+                <br>var{padding: 10px;} --- 4 cantos
+                <br>var{padding: 5px 10px;} --- horizontal / vertical
+                <br>var{padding: 1px 2px 2px;} --- superior / horizontal / inferior
+                <br>var{padding: 5px 1px 0 2px} --- superior / direita / inferior / esquerda (sentido horário começando
+                de cima)
+                <br>unidades podem ser combinadas, por exemplo var{padding: 5px 10px 0 1mm}
+                <br>
+                <br>Magin(margem)
+                <br>espaço entre a parte de fora da borda e outro elemento
+                <br>margin-left margin-right margin-bottom margin-top margin
+                <br>atalhos de digitação
+                <br>var{margin: 10px;} --- 4 cantos
+                <br>var{margin: 5px 10px;} --- horizontal / vertical
+                <br>var{margin: 1px 2px 2px;} --- superior / horizontal / inferior
+                <br>var{margin: 5px 1px 0 2px} --- superior / direita / inferior / esquerda (sentido horário começando
+                <br>
+                <br>magin-auto, centraliza os elementos automaticamente
+                <br>é útil zerar as margens ao começar um novo programa, para o conteúdo ocupar toda a área da página,
+                sem "espaços misteriosos"
+                <br>
+                <br>Display(exibição)
+                <br>inline elemente and block elementos
+                <br>inline elements fit in alongside other elements
+                <br>block level elements take up a whole "block" of space
+                <br>
+                <br>inline block inline-block
+                <br>h1{display: inline;} --- elements like h1 (block level) now are inline elements on display
+                <br>span{display: block;} --- elements like span (inline elements) now are block elements on dsplay
+                <br>inline elements doesn't respect width and height spacementes, just horizontal that they are aligned
+                <br>block elements not overlap another elements
+                <br>inline-block elements are inline elements that respects width and height properties
+                <br>var{display: none;} --- oculta elementos
+                <br>
+                <br>in google dev tool "inspect", the content is represented by the blue color, padding by the green
+                color, border by the "yellow" color, and margin by the orange color
+            </p>
+            <p>
+                <span>unidades</span>
+                <br>tamanhos definidos por
+                <br>relativos: em, rem, vh, vw, %, outros
+                <br>absolutos: px, pt, cm, in, mm
+                <br>PX absoluta mais comum, não é exatamente um pixel, varia de acordo com o monitor não recomendado em
+                sites responsivos
+                <br>mms in usados pra imprimir etc, não são comuns
+                <br>unidades relativas são as comumente usadas
+                <br>% - porcentagem de alguma coisa, é a porcentagem do elemento pai dependendo da utilização
+                <br>exemplo: h1{font-size: 40px; line-height: 200%;} --- a altura da linha é o dobro do tamanho da fonte
+                <br>
+                <br>EM - relaciona com o elemento pai
+                <br>exemplo: h2{font-size: 2em;} --- h2 tem o dobro do tamanho da fonte de seu elemento pai, se estiver
+                dentro de um div com tamanho da fonte de 40px por exemplo, ele terá 80px de tamanho da fonte, definido
+                por 2em (dobro do elemento pai), comum utilizá-los em margins, paddings, etc, muito úteis para escalar o
+                tamanho dos elementos conforme onde é utilizado
+                <br>um erro que acontece comumente, é como em listas dentro de listas o tamanho vai aumentando conforme
+                o nível de ligações (primeira lista respeita o elemento pai anterior as listas, porem as próximas listas
+                em diante, relacionarão o tamanho com o tamanho da linha anterior), ficando cada vez
+                <sup>maior</sup>/<sub>menor</sub>
+                <br>
+                <br>REM - relativo ao "root html element"
+                <br>elemento raíz html
+                <br>html{font-size: 20px;}
+                <br>se o elemento raíz tiver 20px, 1rem sempre terá 20px e 2 rem 40px, não varia conforme "graus de
+                ligações"
+                <br>
+            </p>
+            <p>
+                <span>algumas outras propriedades</span>
+                <br>alpha channel (canal alpha)
+                <br>rgba altera a cor do fundo
+                <br>rgba(255, 0, 0, 1) --- opacidade 100%, alpha varia de 0 a 1
+                <br>#FF0000FF --- opacidade 100% em hexadecimal, alpha varia de 00 a FF
+                <br>
+                <br>opacity (opacidade)
+                <br>var{opacity: 0.5} --- 50% de opacidade, varia de 0 a 1 (0~100%)
+                <br>opacidade altera a cor de todos os elementos da seção, não só a cor de fundo como o rgba
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>position (posição)
+                <br>define como um elemento é posicionado na página
+                <br>valores podem ser estáticos, relativos, fixos, absolutos
+                <br>static: top right bottom left z-index não tem efeito, é o valor padrão, estático
+                <br>var{position: static;}
+                <br>
+                <br>relative: top right bottom left
+                <br>var{position: relative; top: 100px;} --- offset de 100 px na parte superior
+                <br>
+                <br>absolute
+                <br>posicionado em relação ao elemento ancestral mais próximo
+                <br>ou posicionado em relação ao bloco inicial
+                <br>var{position: absolute; top: 10px; left: 10px;} --- offset de 10px à esquerda e em cima do início do
+                "ancestor element", o qual ele é relacionado
+                <br>
+                <br>fixed
+                <br>posicionado em relação a topo da página, é como um absolute porém fixo mesmo quando há scroll na
+                página, e não depende de elemento ancestral
+                <br>var{position: fixed;}
+                <br>
+                <br>sticky
+                <br>é um fixed que pode ser alterado, para deixar de ser fixo em determinado momento
+                <br>var{position: sticky;}
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>transition (transições)
+                <br>existem diversos comandos para todas as formas de transição possível, consultar MDN
+                <br>property-name duration timing-function delay
+                <br>animar a propriedade de um elementopara outra propriedade
+                <br>quando utilizado um hover de cor por exemplo, é possível adicionar um tempo de transição para que a
+                cor mude de fato, em javascript é possível fazer uma integração muito mais complexa
+                <br>var{transition: background-color 1s ease-in, border-radius 2s 1s} --- as 4 funções em um código
+                <br>
+                <br>property-name + duration (s, ms)
+                <br>define o que mudará com delay, e todo o resto não definido mudará instantaneamente no caso de um
+                hover por exemplo
+                <br>var{transition: background-color 1s;} --- somente a cor de fundo tera delay de 1s para se alterar
+                <br>é possível adicionar um delay para que o delay comece
+                <br>var{transition: background-color 2s 1s;} --- ao pairar o botão por 1s, a animação de 2s irá começar
+                <br>var{transition: all 750ms 250ms} --- todas as propriedades definidas no hover e no objeto normal
+                serão alteradas após pairar por 250ms, uma transição com a duração de 750ms
+                <br>var{transition: background-color 1s, border-radius 2s;} --- a cor de fundo demora 1s e o raio demora
+                2s, começando a contar a partir do momento em que o elemento é pairado
+                <br>
+                <br>timing-function
+                <br>linear ease-in ease-out steps cubic-bezier
+                <br>var{transition-timing-function: linear;} --- transição linear
+                <br>var{transition-timing-function: ease-in;} --- vai ficando mais rápido
+                <br>var{transition-timing-function: ease-out;} --- vai ficando mais devagar
+                <br>var{transition-timing-function: steps(6,end);} --- número de passos
+                <br>var{transition-timing-function: cubic-bezier(.29, 1.01, 1, -0.68);} --- "curva de aceleração"
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>transform
+                <br>consultar MDN, imensas funcionalidades
+                <br>girar, distorcer, esticar, dimensionar, enviar, mover, dentre outras várias outra coisas
+                <br>
+                <br>rotate (girar)
+                <br>rotate() rotate3d() rotateX() rotateY() rotateZ()
+                <br>unidades: deg grad rad turn
+                <br>graus(circulo = 360º) gradianos(circulo = 400º) radianos(circulo =2&pi;) turn(circulo = 1 turn)
+                <br>deg
+                <br>origem de rotação por padrão é o centro do elemento, mas é possível trocar
+                <br>var{transform-origin: bottom-right} --- define a origem de rotação do canto inferior direito
+                <br>var{transform: rotate(180deg);} --- define que o elemento será girado 180º
+                <br>
+                <br>scale (escala)
+                <br>mudar o tamanho do elemento proporcionalmente, para mais ou para menos
+                <br>scale() scale3d() scaleX() scaleY() scaleZ()
+                <br>var{transform: scale(0.5);} --- 50% do tamanho original
+                <br>var{transform: scale(2, 1);} --- largura 200% do tamanho original e largura igual ao original
+                <br>
+                <br>translate(mover)
+                <br>mover elementos na página, usando pxs, rems, ems, etc
+                <br>mover horizontalmente X (+ = direita / - esquerda), mover verticalmente Y (+ = baixo / - = cima)
+                <br>translate() translate3d() translateX() translateY() translateZ()
+                <br>var{transform: translateX(20px);} --- move 20px para a direita
+                <br>var{transform: translate(-200px, 100px)} - move 200px para a esquerda e 100px para baixo
+                <br>
+                <br>skew(distorcer)
+                <br>distorce um elemento 2d
+                <br>skew() skewX() skewY()
+                <br>unidades: deg grad rad turn
+                <br>var{transform: skew(30deg);} --- 30º em X e Y
+                <br>var{transform: skew(10deg, 25deg);} --- 10º em X e 25º em Y
+                <br>
+                <br>é possível combinar elementos de transformações
+                <br>var{transform: rotate(90deg) scale(1.30);} --- rotacionado em 90º e 130% do tamanho original
+                <br>var{transform: translateX(-500px) rotate(0.5turn);} --- movido 500px para a esquerda e de cabeça
+                para baixo
+                <br>afeta todos os elementos dentro da seção que está sendo transformada
+                <br>matrix e perspectiva são comandos mais complexos
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>botão com efeito legal
+                <br>html --- uma página com um botão no corpo
+                <br>body{display: flex; align-items: center; justify-content: center; height: 100vh; background-color:
+                black;}
+                <br>button{background: none; color: #ffa260 border: 2px solid; padding: 1em 2em; font-size: 1em;
+                transition: color 250ms, border-color 250ms, box-shadow 250ms, transform 250ms, ;}
+                <br>button:hover{border-color: #f1ff5c; color: white; box-shadow: 0 0.5em 0.5em -0.4em #f1ff5c;
+                transform: translateY(-0.25em); cursor: pointer;}
+                <br>
+                <br>box-shadow (sombra)
+                <br>var{box-shadow: 12px 12px 2px 1px red;}
+                <br>deslocamento X, deslocamento Y, raio de desfoque, raio de propagação, cor
+                <br>consultar MDN para informações completas
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>background (fundo)
+                <br>fundo pode ser uma cor sólida, pode ser uma imagem, que pode ser posicionada para cima baixo
+                esquerda direita, escalar, etc, consultar MDN
+                <br>background-attachment background-clip background-origin background-color background-image
+                <br>
+                <br>body{background-image:
+                url("https://images.unsplash.com/photo-1537204319452-fdbd29e2ccc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80");}
+                <br>p{background-image:
+                url("https://images.unsplash.com/photo-1578070181910-f1e514afdd08?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=933&q=80");}
+                <br>
+                <br>body{background-size: contain;} --- dimensiona a imagem sem cortar e sem esticar para ser o máximo
+                possível, depois repete, é possível controlar as repetições no comando background-repeat, consultar MDN
+                <br>p{background-size: cover;} --- dimensiona a imagem cortando e esticando para completar o necessário
+                <br>
+                <br>background-position
+                <br>var{background-position: bottom;} --- define que o começo do plano de fundo vai começar da parte de
+                baixo da imagem, top left right
+                <br>
+                <br>existem atalhos de digitação para o comando "background" puro, por exemplo
+                <br>alguns exemplos:
+                <br>var{background: url("url"); no-repeat}
+                <br>var{background: center/cover url("url");}
+                <br>var{background: center/20% url("url");}
+                <br>var{background: center/40% no-repeat url("url"), darkblue;} --- múltiplos planos de fundo, podendo
+                ser várias imagens
+                <br>existem algumas particularidades, para quen não ocorram erro na inserção de imagens, detalhadas na
+                documentação disponível no MDN
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>google fonts
+                <br>é possível colocar as fontes disponíveis que estão disponíveis na sua máquina, porém em máquinas
+                onde não existem essas fontes, o site não ficará da maneira esperada, por isso é útil o google fonts, um
+                recurso gratuito que torna possível adicionar fontes ao documento
+                <br>no próprio site do google fonts, após selecionar as fontes e tamanhos desejados, é criado um link
+                para adicioná-las tanto no código html, quanto no código em CSS, fontes podem ser misturadas
+                <br>var{font-family: font;}
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>calc
+                <br>calc() --- realiza o cálculo, útil para não ter falhas ao digitar dízimas e sem necessidade de
+                recalcular sempre que fizer alguma alteração
+                <br>var{width: 30%; margin: calc(10/6);}
+                <br>elementos "inline" criam um espaço de caractere vazio caso não sejam posicionados no html um após o
+                outro, não saltar espaçs no código para não ter erros com isso
+                &lt;img&gt;&lt;/img&gt;&lt;img&gt;&lt;/img&gt;
+            </p>
+            <p>
+                <span>flexbox e css responsivos</span>
+                <br>flexbox's (layouts flexíveis)
+                <br>parte mais recente do css, responsável por layout de páginas em caixas, a medida que a janela é
+                proporcionada a orientação pode mudar por exemplo, de alinhamentos horizontais para alinhamentos
+                verticais
+                <br>display: flex
+                <br>2 eixos, main axis(principal) da esquerda pra direita, cross axis(cruzado) de cima pra baixo
+                (reverses inverte a direção) os eixos são manipulados de acordo com o eixo principal
+                <br>
+                <br>
+                <br>direção do eixo principal
+                <br>flex-direction (direção dos elementos no eixo principal)
+                <br>row(padrão) row-reverse column column-reverse
+                <br>direção dos elementos na página a partir dos 2 eixos
+                <br>
+                <br>alinhamento no eixo principal
+                <br>justify-content (alinhamento principal, baseado no eixo principal)
+                <br>flex-start flex-end flex-center flex-between flex-arround space-evenly
+                <br>o começo e o fim é baseado na orientação dos elementos, se começarem na direita, o fim será a
+                esquerda
+                <br>
+                <br>direção no eixo cruzado
+                <br>flex-wrap (utiliza uma disposição baseada no eixo cruzado, modifica sua direção)
+                <br>wrap wrap-reverse nowrap
+                <br>
+                <br>alinhamento no eixo cruzado
+                <br>align-items (distribui os itens no eixo cruzado)
+                <br>flex-start flex-end center baseline(linha de baixo do texto)
+                <br>
+                <br>espaço entre os elementos no eixo cruzado
+                <br>align-content (distribuir o espaço ao longo do eixo cruzado, controle de espaço entre o eixo
+                cruzado)
+                <br>space-between space-arround flex-start flex-end center
+                <br>somente funciona quando há wrap criando elementos ao longo do eixo cruzado
+                <br>
+                <br>alinhamento ao longo do eixo cruzado em um único elemento
+                <br>align-self (elemento individual no eixo cruzado baseado no espaço disponível no eixo cruzado)
+                <br>flex-end flex-start center
+                <br>
+                <br>width ou height ao longo do eixo principal (height em column, width em row)
+                <br>flex-basis (define o tamanho inicial do elemento antes de colocá-lo no contêiner)
+                <br>px em rem etc
+                <br>
+                <br>preenchimento de acordo com o espaço disponível
+                <br>flex-grow (preenchimento baseado no espaço livre disponível)
+                <br>1 dígito, em caso de mais de um elemento com essa característica, o número funciona como uma
+                proporção (por ex, elemento 1 com grow 1 e elemento 2 com grow 2, o elemento 2 ocupa o dobro do tamanho
+                do elemento 1 quando são redimensionados para um tamanho maior)
+                <br>pode ser definito um limite de tamanho em (max-width e max-height, unidades em em rem px etc)
+                <br>
+                <br>velocidade de diminuição do elemento
+                <br>flex-shrink (diminuição baseado no espaço que os elementos ocupam)
+                <br>0 = não encolhe, um dígito, quando maior, mais rápido encolhe quando redimensionado
+                <br>
+                <br>atalhos de digitação
+                <br>flex (atalho de digitação para vários comandos de flex, ordem de todas as possíveis no MDN)
+                <br>var{flex:1;} --- flex grow
+                <br>var{flex:1 600px} --- grow basis
+                <br>var{flex:1 2 600px} --- grow shrink basis
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>design responsivo
+                <br>nas ferramentas de inspeção do google é possível visualizar a versão para dispositivos móveis
+                <br>site funcional e bonito em todos os dispositivos, mobiles, monitores mais largos, resoluções
+                diferentes, etc, é possível utilizando media queries
+                <br>media queri permite modificar o estilo dependendo os parâmetros particulares dos dispositivos
+                <br>principal mecanismo para reestilizar um site responsivo de acordo com a orientação, dispositivo etc
+                <br>
+                <br>@media (media queries)
+                <br>widhth height orientation baseados no viewport(o que é visível)
+                <br>@media(min-width: 800px){h1{color: purple;}} --- acima de 800px a cor de h1 é roxo
+                <br>media queris podem ser combinadas
+                <br>@media(min-width: 600px) and (max-width: 800px){h1{color: purple;}} -- entre 600px e 800px de
+                largura da página, h1 é roxo
+                <br>a ordem de valores importa no código em CSS, valores menores devem estar em cima no código
+                <br>em códigos de max-width um de 1000px e um de 500px, o de 1000px deve setar em cima do de 500px no
+                código
+                <br>@media(orientation: landscape){h1{background-color: magenta;}} --- se a orientação for paisagem,
+                terá um fundo de cor magenta em h1
+                <br>max-width --- valores abaixo do definido ativarão a condição
+                <br>min-width --- valores acima do definido ativarão a condição
+            </p>
+            <p>
+                <span>estrutura(framework) de css : bootstrap(BS)</span>
+                <br>customização mais rápida e mais fácil, os códigos em css já vem prontos, basta adicionar as classes
+                nos elementos requeridos no código em html
+                <br>bootstrap - agilização do desenvolvimento, utilizado junto ao javascript
+                <br>sempre consultar a documentação
+                <br>bootstrap ajuda a criar rapidamente sites responsivos modernos de boa aparência
+                <br>bootstrap utiliza classes
+                <br>duas coisas principais
+                <br>components(elementos do site) e grid system(sistema de grade, layout)
+                <br>sistema de grades organiza e reorganiza os elementos na página de acordo com o tamanho da text-align
+                <br>é possível utilizar elementos do bootstrap para facilitar construções com flexboxs por exemplo
+                <br>
+                <br>para incluir o bootstrap, pode ser baixado, ou usando o CDN (versão remota), observara versão
+                utilizada, junto ao arquivo em .css &lt;head&gt;
+                <br>&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+                rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+                crossorigin="anonymous"&gt;
+                <br>redimensiona elementos como margens, fontes etc
+                <br>para incluir os elementos de forma completa, é necessário adicionar os scripts em javascript
+                <br>os scripts do bootstrap são colocados nas últimas linhas de código antes de &lt;/body&gt;
+                <br>as classes pré-definidas nos comandos do bootstrap são criadas no código de link usado no
+                &lt;head&gt;
+                <br>a maioria dos comandos em bootstrap é utilizado com as classes que estão nos comandos
+                <br>
+                <br>container --- fundamental em um sistema de grades
+                <br>elemento mais básico do bootstrap, utilizado para adequar o sistema de grade
+                <br>container redimensiona a exibição da página de acordo com o tamanho da visualização
+                <br>
+                <br>btn --- classe de botões
+                <br>primary secondary success danger warning info light dark link etc são customizáveis
+                <br>depende do código a ser usado, toda documentação está escria no site do bootstrap, assim como o MDN
+                <br>
+                <br>display --- tamanho de exibição
+                <br>tamanho de exibição, elementos h1 h2 h3 etc precisam ser consecutivos, não é o caso dos displays
+                <br>útil em elementos de títulos, subtítulos
+                <br>
+                <br>lead --- destacar parágrafos
+                <br>deixa os parágrafos um pouco maiores, mudando o tamanho da fonte e a largura da fonte
+                <br>
+                <br>blockquote puro(html) é usado para citações, uma linha menor que a normal
+                <br>blockquote --- destacar citações
+                <br>blockquote-footer --- nome de quem fez a escrita original da citação por ex
+                <br>
+                <br>mb (margem) --- define margem para os elementos
+                <br>
+                <br>alignment utilities (alinhamento usando bootstrap) --- alinhamento do texto
+                <br>text-right text-left text-center
+                <br>
+                <br>colors --- cores
+                <br>text-primary text-info etc
+                <br>
+                <br>background colors --- cores de fundo
+                <br>bg-secundary bg-warning etc
+                <br>
+                <br>badge --- títulos, botões, etc
+                <br>escalado de acordo com o elemento pai (h1 h2 h3 etc)
+                <br>badge bagde-primary etc
+                <br>
+                <br>button group --- agrupa vários botões
+                <br>botões dentro de um div, depois agrupados usando um button group
+                <br>role="group" --- indica que é um grupo de botões para leitores de tela
+                <br>
+                <br>alerts --- feedback ao usuário, salvo, falha, bem vindo de volta etc
+                <br>mostrar ao usuário alguma coisa importante
+                <br>class="alert" alert-primary (classe + cor) etc
+                <br>alert-heading --- título para botões
+                <br>dimissing &times; --- fechar alerta (utiliza javascript)
+                <br>roles="alert" class="close" data-dismiss="alert"
+                <br>
+                <br>aria-laber aria-hidden --- auxiliares para leitores de tela
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>grid system (layout)
+                <br>ajuda a fazer o layout na página utilizando bootstrap
+                <br>só funciona dentro de um container, precisa de um ou mais containers na página
+                <br>
+                <br>criar a row usando a classe row
+                <br>cada row no bootstrap tem 12 unidades (SEMPRE)
+                <br>criar uma coluna ussando a classe col-U (U é o número de unidades usadas da row)
+                <br>col sem definir unidades, divide o espaço igualmente entre o número de elementos
+                <br>col-sm-8 --- quando a exibição for considerada "pequena"(documentação no bootstrap), o
+                o elementos empilham, mas quando for maior que isso, ocupará 8 unidades
+                <br>no-gutters --- elimina os espaços entre elementos em colunas
+                <br>img-fluid --- responsive images
+                <br>img class="col"
+                <br>
+                <br>comandos de alinhamento de conteúdo etc, são escritos após a classe row
+                <br>alinhamento utilizando bootstrap (flexboxes in bootstrap)
+                <br>row align-items-end align-items-start align-items-center
+                <br>align-self-start align-self-end align-self-center --- align self in bootstrap
+                <br>
+                <br>justify content
+                <br>justify-content-start justify-content-end justify-content-center justify-content-between
+                <br>
+                <br>border --- cria uma borda
+                <br>
+                <br>forms
+                <br>form-control --- melhor visualização para entrada de dados
+                <br>form-control-sm lg etc --- tamanho do input
+                <br>custom-control custom-checkbox --- personalizações para checkboxes são mais complexas
+                <br>custom-radio custom-range
+                <br>custom-switch --- checkbox switch
+                <br>form-row --- espaço mais compacto, melhor para formulários
+                <br>col-md-6 --- abaixo da resolução "média", eles vão empilhar em duas linhas
+                <br>col-md-6 col-4 --- abaixo da média ocupa 6 unidades, acima disso ocupa 4
+                <br>
+                <br>nav bars (navegação em bootstrap) consultar site bootstrap, javascript necessário
+                <br>nav class="navbar navbar-light(cor do texto) bg-light(cor do fundo)""
+                <br>nav class="navbar-nav"
+                <br>a class="navbar-brand"
+                <br>a class="nav item nav-link active"
+                <br>div class="collapse navbar-collapse navbar-expand-lg"
+                <br>button class="navbar-toggler" com um span class="navbar-toggler-icon"
+                <br>data-toggle="collapse" data-target="#id"
+                <br>navbar "fixed-top" fixed-bottom --- fixa a nav no topo
+                <br>navbar "sticky-top" --- fixada no topo, porém não fixada durante o conteúdo acima da nav
+                <br>
+                <br>bootstraps icon (recurso alfa)
+                <br>svg (recurso html de vetores gráficos escalaveis)
+                <br>não é uma imagem, é um código que define o caminho da imagem, não perdem qualidade quando escalados
+                <br>
+                <br>mg margin p padding
+                <br>border, shadow, vários recursos do css são inclusos em comandos de bootstrap
+                <br>d-none (d= display)
+                <br>class="d-none d-md-block" ex
+                <br>w-20 h-20 (20% width height)
+                <br>card --- suporte genérico de conteúdo
+                <br>carousel --- sliders, mini-galeria
+                <br>dropdown - menus suspensos para diferentes direções e alinhamentos
+                <br>spinner --- ícones de carregamento
+                <br>progress --- barras de progresso
+                <br>modal --- diálogos pop-up
+                <br>
+            </p>
+            <button id="button1">Button 1</button>
+            <button id="button2">Button 2</button>
+            <p>
+                <span class="lorems">Lorem</span> ipsum dolor, sit amet consectetur adipisicing elit. Pariatur illo
+                neque labore tempora consequatur
+                ipsa modi minima enim est, sapiente eligendi quam laborum, dolor sint aliquam ullam. Eveniet, saepe
+                sunt?
+            </p>
+            <div>
+                <p>
+                    <span class="lorems">Lorem</span> ipsum dolor sit amet consectetur adipisicing elit. Quod odio
+                    sapiente
+                    quos neque itaque incidunt
+                    beatae voluptates explicabo maiores autem dignissimos, odit perspiciatis ex accusamus reprehenderit
+                    natus et nobis temporibus.
+                    <span class="lorems">Similique</span> quod a laboriosam. Accusamus modi aut soluta ullam perferendis
+                    quasi recusandae nostrum
+                    consequuntur! Accusantium numquam ut accusamus, veniam exercitationem, culpa nostrum repellat vero
+                    ratione odio sunt explicabo magnam amet.
+                    <span class="lorems">Perferendis</span> voluptatem voluptatibus id ex ea voluptas reprehenderit sunt
+                    et
+                    excepturi velit
+                    exercitationem numquam, sed maiores adipisci eius dolorem eligendi quis quia animi in modi aperiam!
+                    Alias quibusdam quas adipisci.
+                </p>
+            </div>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <a href="https://www.youtube.com/">YouTube</a>
+    </footer>
+
+</body>
+
+</html>
